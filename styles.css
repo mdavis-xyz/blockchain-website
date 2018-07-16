@@ -1,3 +1,43 @@
-h1 {
-   color: DeepSkyBlue;
+.slider {
+    /*position: absolute;*/
+    /*width: 100px;*/
+    height: 100px;
+    background: black;
+    color: white;
+    /*left: 50%;*/
+    /*margin-left: auto;
+    margin-right: auto;*/
+    /*width: 100%;*/
+    /*left: 50%;*/
+    margin: auto;
+    text-align: center;
+}
+
+.slide-in {
+    left: 50%;
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    0% { -webkit-transform: translateX(-50%);}
+    100% { -webkit-transform: translateX(0%);}
+}
+
+@keyframes slide-out {
+    100% { transform: translateX(100%); }
+}
+
+@-webkit-keyframes slide-out {
+    100% { -webkit-transform: translateX(100%); }
 }
