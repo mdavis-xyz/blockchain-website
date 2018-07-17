@@ -1,14 +1,13 @@
 .slider {
-    /*position: absolute;*/
-    /*width: 100px;*/
-    height: 100px;
+    width: 100vw;
+    height: 30vh;
     background: black;
     color: white;
-    /*left: 50%;*/
-    /*margin-left: auto;
-    margin-right: auto;*/
-    /*width: 100%;*/
-    /*left: 50%;*/
+    position: absolute;
+    display: inline-block;
+    float: left;
+    top: 0;
+    left: 0%;
     margin: auto;
     text-align: center;
 }
@@ -25,13 +24,13 @@
 }
 
 @keyframes slide-in {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0%); }
+    0% { transform: translateX(-150%); }
+    100% { transform: translateX(-50%); }
 }
 
 @-webkit-keyframes slide-in {
-    0% { -webkit-transform: translateX(-50%);}
-    100% { -webkit-transform: translateX(0%);}
+    0% { -webkit-transform: translateX(-150%);}
+    100% { -webkit-transform: translateX(-50%);}
 }
 
 @keyframes slide-out {
