@@ -1,42 +1,50 @@
+body {
+   background: black;
+}
+
 .slider {
     width: 100vw;
-    height: 30vh;
-    background: black;
+    height: 100vh;
     color: white;
     position: absolute;
-    display: inline-block;
+    display: table-cell;
     float: left;
-    top: 0;
+    /*top: 50vh;*/
     left: 0%;
-    margin: auto;
+    margin-bottom: : auto;
+    /*margin: auto;*/
     text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    /*top: 50vh;*/
+    /*transform: translate(0, -50%);*/
 }
 
-.slide-in {
+.slide-in-right {
     left: 50%;
-    animation: slide-in 0.5s forwards;
-    -webkit-animation: slide-in 0.5s forwards;
+    animation: slide-in-right 0.5s forwards;
+    -webkit-animation: slide-in-right 0.5s forwards;
 }
 
-.slide-out {
-    animation: slide-out 0.5s forwards;
-    -webkit-animation: slide-out 0.5s forwards;
+.slide-out-right {
+    animation: slide-out-right 0.5s forwards;
+    -webkit-animation: slide-out-right 0.5s forwards;
 }
 
-@keyframes slide-in {
+@keyframes slide-in-right {
     0% { transform: translateX(-150%); }
     100% { transform: translateX(-50%); }
 }
 
-@-webkit-keyframes slide-in {
+@-webkit-keyframes slide-in-right {
     0% { -webkit-transform: translateX(-150%);}
     100% { -webkit-transform: translateX(-50%);}
 }
 
-@keyframes slide-out {
+@keyframes slide-out-right {
     100% { transform: translateX(100%); }
 }
 
-@-webkit-keyframes slide-out {
+@-webkit-keyframes slide-out-right {
     100% { -webkit-transform: translateX(100%); }
 }

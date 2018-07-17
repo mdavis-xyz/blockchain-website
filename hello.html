@@ -15,24 +15,26 @@
 
 
 
-<div id="slider-l" class="slider slide-in">
+<div id="slider-A" class="slider slide-in-right">
     <ul>
         <li>Lorem</li>
         <li>Ipsum</li>
         <li>Dolor</li>
     </ul>
+    <button onclick="slide('slider-A','slider-B','right')">Toggle</button>
 </div>
 
-<div id="slider-m" class="slider slide-out">
+<div id="slider-B" class="slider slide-out-right">
     <ul>
         <li>Middle</li>
         <li>Middle middleaaaaa</li>
         <li>middle</li>
         <li>middle</li>
     </ul>
+    <button onclick="slide('slider-B','slider-C','right')">Toggle</button>
 </div>
 
-<div id="slider-r" class="slider slide-out">
+<div id="slider-C" class="slider slide-out-right">
     <ul>
         <li>Right</li>
         <li>text</li>
@@ -41,9 +43,10 @@
         <li>text</li>
         <li>here</li>
     </ul>
+    <button onclick="slide('slider-C','slider-A','right')">Toggle</button>
 </div>
 
-<button id="toggle" style="position:absolute; top: 50vh;">Toggle</button>
+
 
 </body>
 </html>

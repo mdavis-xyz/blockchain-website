@@ -3,10 +3,16 @@ $(document).ready(function() {
    var $sliderR = document.getElementById('slider-r');
    var $toggle = document.getElementById('toggle');
 
-   $toggle.addEventListener('click', function() {
-       var isOpen = $sliderL.classList.contains('slide-in');
 
-       $sliderL.setAttribute('class', isOpen ? 'slider slide-out' : 'slider slide-in');
-       $sliderR.setAttribute('class', isOpen ? 'slider slide-in' : 'slider slide-out');
-   });
+
 });
+
+function slide(oldElID,newElID,direction){
+   var newEl = document.getElementById(newElID);
+   var oldEl = document.getElementById(oldElID);
+   console.log(`sliding ${oldElID} to ${direction} to make room for ${newElID} `);
+   var newattr = 'slider slide-in-' + direction;
+   console.log(`setting attribute to ${newattr}`)
+   newEl.setAttribute('class', 'slider slide-in-' + direction);
+   oldEl.setAttribute('class', 'slider slide-out-' + direction);
+}
