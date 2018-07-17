@@ -2,7 +2,7 @@ body {
    background: black;
 }
 
-.slider {
+section {
     left: 0%;
     float: left;
     /*width: 100vw;
