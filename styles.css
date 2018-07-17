@@ -3,21 +3,26 @@ body {
 }
 
 .slider {
-    width: 100vw;
-    height: 100vh;
+    left: 0%;
+    float: left;
+    /*width: 100vw;
+    height: 100vh;*/
     color: white;
     position: absolute;
-    display: table-cell;
-    float: left;
+    /*display: table-cell;*/
     /*top: 50vh;*/
-    left: 0%;
-    margin-bottom: : auto;
-    /*margin: auto;*/
+    /*margin-bottom: : auto;*/
+    margin: auto;
     text-align: center;
     align-content: center;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
     /*top: 50vh;*/
     /*transform: translate(0, -50%);*/
+    display: grid;
+    justify-content:center;
+    align-items:center;
+    width:99%;
+    height:96%;
 }
 
 .slide-in-right {
