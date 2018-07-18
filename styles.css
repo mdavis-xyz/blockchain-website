@@ -1,8 +1,19 @@
+* {
+   font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
 body {
-   background: black;
+   background: #222;
    overflow: hidden;
    height: 100vh;
    width: 100vw;
+}
+
+h1 {
+   font-size: 2.5em;
+   color: #fff;
+   font-family: Roboto, "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
+   text-transform: uppercase;
 }
 
 section {
