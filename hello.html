@@ -16,7 +16,7 @@
 <section id="slider-A" class="slide-in-right">
     <h1>Slider A</h1>
     <p>text here</p>
-    <button onclick="slide('slider-A','slider-B','bottom')">Toggle</button>
+    <a href="javascript:slide('slider-A','slider-B','bottom')" class="pure-button">Toggle</a>
 </section>
 
 <section id="slider-B" class="slid-out">
@@ -28,7 +28,8 @@
         <li>middle</li>
         <li>middle</li>
     </ul>
-    <button onclick="slide('slider-B','slider-C','right')">Toggle</button>
+    <a href="javascript:slide('slider-B','slider-C','left')" class="pure-button">Toggle C</a>
+    <a href="javascript:slide('slider-B','slider-A','left')" class="pure-button">Toggle A</a>
 </section>
 
 <section id="slider-C" class="slid-out">
@@ -66,7 +67,7 @@
         <li>text</li>
         <li>here</li>
     </ul>
-    <button onclick="slide('slider-C','slider-A','left')">Toggle</button>
+    <a href="javascript:slide('slider-C','slider-A','left')" class="pure-button">Toggle</a>
 </section>
 
 </body>
