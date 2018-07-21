@@ -20,7 +20,7 @@ def main():
     html = htmlize(content)
     # print(html)
 
-    with open('content.html','w') as f:
+    with open('public/content.html','w') as f:
         f.write(html)
     print('done')
 
