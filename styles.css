@@ -29,6 +29,10 @@ p {
    padding-right: 15px;
 }
 
+a {
+   text-decoration: none;
+   color: #007fff;
+}
 
 section {
    left: 0%;

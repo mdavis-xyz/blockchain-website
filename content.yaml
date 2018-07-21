@@ -6,6 +6,7 @@
           destination: 1
           destination-type: relative
           direction: left
+     - p: Written by <a href="https://www.linkedin.com/in/engineerdavis/">Matthew Davis</a>. Inspired by <a href="http://doyouneedablockchain.com/">doyouneedablockchain.com</a> and <a href="https://davidgerard.co.uk/blockchain/2018/02/10/do-you-need-a-blockchain-probably-less-than-wust-and-gervais-think-you-do/">David Gerard's blog</a>.
 - id: save-data
   content:
      - h2: Do you need to save data?
@@ -110,7 +111,11 @@
           destination: leave-illegal-content
           destination-type: absolute
           direction: left
-     # TODO: 3rd option: we won't let people write that
+     - button:
+        - text: Only nice people will be allowed to write to the blockchain
+          destination: some-write
+          destination-type: absolute
+          direction: up
 - id: delete-illegal-content
   content:
      - h1: No, you don't need a blockchain
@@ -267,10 +272,9 @@
   content:
      - h1: No, You don't need a blockchain
      - p: There's a law in mathematics that says you can't have truly distributed databases, without central orchestration.
-     - p: Satoshi (the inventor of blockchains) found a loophole. It's possible, but only if you deliberately slow everything down, a lot. # TODO: podcast link
-     - p: Bitcoin is the world's most famous blockchain, and it can only process about 3 transactions per second. Other versions of that algorithm can deal with a little bit more, typically at the expense of security. Claims of substantially faster blockchains are typically <a href="https://en.wikipedia.org/wiki/Vaporware">vapourware</a>. # TODO: look up lightening
+     - p: Satoshi (the inventor of blockchains) found a <a href="content.blubrry.com/stealthisshow/S02_E13_The_Future_Of_BitTorrent_with_Bram_Cohen.mp3#t=1:01:30">loophole</a>. It's possible, but only if you deliberately slow everything down, a lot.
+     - p: Bitcoin is the world's most famous blockchain, and it can only process about <a href="https://www.blockchain.com/charts/transactions-per-second?timespan=30days">3 transactions per second</a>. Other versions of that algorithm can deal with a little bit more, typically at the expense of security. Claims of substantially faster blockchains are typically <a href="https://en.wikipedia.org/wiki/Vaporware">vapourware</a>. # TODO: look up lightening
      - p: If you need performance, just use a normal blockchain.
-     # TODO: look up TODO notes from other
 - id: emissions-q
   content:
      - h2: Is reducing greenhouse gas emissions important?
@@ -288,7 +292,7 @@
   content:
      - h1: You don't want a blockchain
      - p: There's a law in mathematics that says you can't have truly distributed databases, without central orchestration.
-     - p: Satoshi (the inventor of blockchains) found a loophole. It's possible, by burning as much energy as a whole country, spent powering many computers playing <a href="https://youtu.be/ZH-cXBhkl-E?t=21s">Number Wang</a>. Only once a computer wins Number Wang can it write something to the database. # TODO: country reference
+     - p: Satoshi (the inventor of blockchains) found a loophole. It's possible, by using as  much electricity as <a href="https://www.cell.com/joule/fulltext/S2542-4351(18)30177-6">a whole country</a>, spent powering many computers playing <a href="https://youtu.be/ZH-cXBhkl-E?t=21s">Number Wang</a>. Only once a computer wins Number Wang can it write something to the database.
      - p: Other types of blockchains have been proposed, which use <i>Proof-of-Stake</i> or <i>Proof-of-Storage</i> instead of <i>Proof-of-Work</i>. These are largely <a href="https://en.wikipedia.org/wiki/Vaporware">vapourware</a>.
      - button:
         - text: Screw the environment, I want a blockchain!
@@ -317,7 +321,7 @@
      - h2: Can you use git?
      - p: <a href="https://git-scm.com/">git</a> is a very popular tool for managing code.
      - p: It's designed to allow multiple people to modify files at the same time. It has an auditable history of all changes made to the data. Most developers already know how to use it, and there's a large ecosystem of <a href="https://www.gitkraken.com/">tools</a> and <a href="https://gitlab.com/">hosting</a> <a href="https://www.github.com">systems</a> for it.
-     - p: If you want, you can use cryptographic signatures to verify writes to the repo. # TODO: reference
+     - p: If you want, you can use <a href="https://help.github.com/articles/signing-commits-using-gpg/">cryptographic signatures</a> to verify writes to the repo. # TODO: reference
      - button:
         - text: No
           destination: 2
@@ -334,13 +338,47 @@
      - h1: Just use git.
      - p: Git repos are like blockchains. The main differences are that they don't emit more pollution than whole countries, and they have useable write throughput rates. # references
      - p: Also, git is a decade old well proven technology which most developers already have the skills to use. Whereas blockchain projects are largely vapourware, with eye-watering consultancy price tags.
-# TODO: cryptocurrency question
-- id: yes-blockchain
+- id: cryptocurrency
+  content:
+     - h2: Are you making a new cryptocurrency?
+     - button:
+        - text: No
+          destination: 3
+          destination-type: relative
+          direction: left
+     - button:
+        - text: Yes
+          destination: new-coin
+          destination-type: absolute
+          direction: up
+- id: new-coin
+  content:
+     - h2: Yet another altcoin?
+     - p: Is this fundementally different to the hundreds which already exist?
+     - button:
+        - text: It's for a different demographic or use-case
+          destination: stupid-coin
+          destination-type: absolute
+          direction: up
+     - button:
+        - text: The code-base is substantially different
+          destination: reasonable-coin
+          destination-type: absolute
+          direction: up
+- id: stupid-coin
+  content:
+     - h1: No, you don't need a blockchain
+     - p: Yes, blockchains are usefull for creating cryptocurrencies. But you shouldn't be making this new cryptocurrency.
+- id: reasonable-coin
+  content:
+     - h1: Yes, you do need a blockchain
+     - p: Cryptocurrencies are one of the few use-cases where blockchains are the best-available choice.
+     - p: Make sure your coin is uniquely usefull.
+     - p: Be carefull though, the world of cryptocurrencies is not very kind to those who write buggy code or have consumer-grade security # TODO: references?
   content:
      - h1: Ok, maybe you should use a blockchain
      - p: I hope the emissions, cost and low performance are worth it.
-#TODO: reorder questions?
-#TODO: check on mobile
-#TODO: ask David Gerard
-#TODO: custom domain and hosting
+# TODO: check on mobile
+# TODO: ask David Gerard
+# TODO: custom domain and hosting
 # TODO reference original
