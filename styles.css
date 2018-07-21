@@ -37,7 +37,7 @@ section {
    position: absolute;
    /*display: table-cell;*/
    /*top: 50vh;*/
-   /*margin-bottom: : auto;*/
+   /*margin-down: : auto;*/
    margin: auto;
    /*padding-bottom: 3vh;*/
    text-align: center;
@@ -50,7 +50,7 @@ section {
    align-items:center;
    width:100vw;
    height:90vh;
-   /*margin-bottom: 5vh*/
+   /*margin-down: 5vh*/
 }
 
 .slid-out {
@@ -124,60 +124,60 @@ section {
 }
 
 
-.slide-in-top {
-   animation: slide-in-top 0.5s forwards;
-   -webkit-animation: slide-in-top 0.5s forwards;
+.slide-in-up {
+   animation: slide-in-up 0.5s forwards;
+   -webkit-animation: slide-in-up 0.5s forwards;
 }
 
-.slide-out-top {
-   animation: slide-out-top 0.5s forwards;
-   -webkit-animation: slide-out-top 0.5s forwards;
+.slide-out-up {
+   animation: slide-out-up 0.5s forwards;
+   -webkit-animation: slide-out-up 0.5s forwards;
 }
 
-@keyframes slide-in-top {
+@keyframes slide-in-up {
    0% { transform: translateY(100vh); }
    100% { transform: translateY(0%); }
 }
 
-@-webkit-keyframes slide-in-top {
+@-webkit-keyframes slide-in-up {
    0% { -webkit-transform: translateY(100vh);}
    100% { -webkit-transform: translateY(0%);}
 }
 
-@keyframes slide-out-top {
+@keyframes slide-out-up {
    100% { transform: translateY(-100vh); }
 }
 
-@-webkit-keyframes slide-out-top {
+@-webkit-keyframes slide-out-up {
    100% { -webkit-transform: translateY(-100vh); }
 }
 
 
-.slide-in-bottom {
-   animation: slide-in-bottom 0.5s forwards;
-   -webkit-animation: slide-in-bottom 0.5s forwards;
+.slide-in-down {
+   animation: slide-in-down 0.5s forwards;
+   -webkit-animation: slide-in-down 0.5s forwards;
 }
 
-.slide-out-bottom {
-   animation: slide-out-bottom 0.5s forwards;
-   -webkit-animation: slide-out-bottom 0.5s forwards;
+.slide-out-down {
+   animation: slide-out-down 0.5s forwards;
+   -webkit-animation: slide-out-down 0.5s forwards;
 }
 
-@keyframes slide-in-bottom {
+@keyframes slide-in-down {
    0% { transform: translateY(-100vh); }
    100% { transform: translateY(0%); }
 }
 
-@-webkit-keyframes slide-in-bottom {
+@-webkit-keyframes slide-in-down {
    0% { -webkit-transform: translateY(-100vh);}
    100% { -webkit-transform: translateY(0%);}
 }
 
-@keyframes slide-out-bottom {
+@keyframes slide-out-down {
    100% { transform: translateY(100vh); }
 }
 
-@-webkit-keyframes slide-out-bottom {
+@-webkit-keyframes slide-out-down {
    99% { -webkit-transform: translateY(100vh); }
    100% { -webkit-transform: translateY(100vh); visibility: hidden;}
 }
@@ -193,8 +193,10 @@ section {
    background-color: #E6E6E6;
    text-decoration: none;
    border-radius: 2px;
-   margin-bottom: 10px;
+   margin-down: 10px;
    text-transform: capitalize;
+   font-weight: bold;
+   width: auto;
 }
 
 .pure-button-hover,
@@ -248,7 +250,7 @@ section {
     height: 10px;
     background-color: black;
     position: absolute;
-    margin-bottom: 20px;
+    margin-down: 20px;
     margin-left: 30px;
     border-radius: 3px;
     bottom: 0;
@@ -304,7 +306,7 @@ section {
 	position: absolute;
 	right: 100%;
 	top: 50%;
-	margin-top: -9px;
+	margin-up: -9px;
 	width: 0;
 	height: 0;
 	border-top: 9px solid transparent;

@@ -37,11 +37,11 @@ function slideNoHist(oldElID,newElID,direction){
 function reverseDirection(prevDir){
    var newDir;
    switch(prevDir.toLowerCase()) {
-       case 'top':
-           newDir = 'bottom';
+       case 'up':
+           newDir = 'down';
            break;
-       case 'bottom':
-           newDir = 'top';
+       case 'down':
+           newDir = 'up';
            break;
        case 'left':
            newDir = 'right';

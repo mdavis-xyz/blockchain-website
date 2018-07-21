@@ -1,0 +1,43 @@
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="script.js" type="text/javascript"></script>
+   </head>
+   <body>
+
+   <a href="javascript:back()" class="left-arrow hidden" id="back-button">back</a>
+
+   % for (i,section) in enumerate(content):
+      <section ${'id="%s"' % section['id'] if 'id' in section else ''} class="${'slide-in-right' if i == 0 else 'slid-out'}">
+          % for el in section['content']:
+              % if 'button' in el:
+                 <a href="javascript:slide('${section['id']}','${el['button'][0]['destination']}','${el['button'][0]['direction']}')" class="pure-button">
+                    ${el['button'][0]['text']}
+                 </a>
+              % elif 'p' in el: # TODO: don't hard code all options, just put it in
+                 <p>
+                    ${el['p']}
+                 </p>
+              % elif 'h1' in el:
+                 <h1>
+                    ${el['h1']}
+                 </h1>
+              % elif 'h2' in el:
+                 <h2>
+                    ${el['h2']}
+                 </h2>
+              % elif 'h3' in el:
+                 <h3>
+                    ${el['h3']}
+                 </h3>
+              % else:
+                 <% raise NotImplementedError %>
+              %endif
+          % endfor
+      </section>
+   % endfor
+
+   </body>
+</html>

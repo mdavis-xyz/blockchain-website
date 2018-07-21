@@ -3,22 +3,22 @@
      - h1: Do you need a blockchain?
      - button:
         - text: Find Out
-        - destination: 1
-        - destination-type: relative
-        - direction: right
+          destination: 1
+          destination-type: relative
+          direction: right
 - id: save-data
   content:
      - h2: Do you need to save data?
      - button:
         - text: No
-        - destination: no-save-data
-        - destination-type: absolute
-        - direction: down
+          destination: no-save-data
+          destination-type: absolute
+          direction: down
      - button:
         - text: Yes
-        - destination: 2
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
 - id: no-save-data
   content:
      - h1: No, you don't need a blockchain
@@ -29,14 +29,14 @@
      - h2: Who will write this data?
      - button:
         - text: Just my organisation
-        - destination: no-write-data
-        - destination-type: absolute
-        - direction: down
+          destination: no-write-data
+          destination-type: absolute
+          direction: down
      - button:
         - text: Other parties too
-        - destination: 2
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
 - id: no-write-data
   content:
      - h1: No, you don't need a blockchain
@@ -47,14 +47,14 @@
      - h2: Who else can write some data?
      - button:
         - text: Only Some People
-        - destination: some-write
-        - destination-type: absolute
-        - direction: down
+          destination: some-write
+          destination-type: absolute
+          direction: down
      - button:
         - text: Literally Anyone
-        - destination: 2
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
 - id: some-write
   content:
      - h1: No, you don't need a blockchain
@@ -68,14 +68,14 @@
      - h2: Who else can write some data?
      - button:
         - text: Sometimes
-        - destination: delete-data-a
-        - destination-type: absolute
-        - direction: down
+          destination: delete-data-a
+          destination-type: absolute
+          direction: down
      - button:
         - text: Never
-        - destination: 2
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
 - id: delete-data-a
   content:
      - h1: No, you don't need a blockchain
@@ -88,14 +88,14 @@
      - p: What will you do if incorrect data is written to the ledger?
      - button:
         - text: Fix It
-        - destination: delete-data-a
-        - destination-type: absolute
-        - direction: down
+          destination: delete-data-a
+          destination-type: absolute
+          direction: down
      - button:
         - text: Leave It
-        - destination: 1
-        - destination-type: relative
-        - direction: right
+          destination: 1
+          destination-type: relative
+          direction: right
 - id: illegal-content
   content:
      - h2: Illegal Content
@@ -103,14 +103,14 @@
      - p: (That <a href="https://fc18.ifca.ai/preproceedings/6.pdf">literally happened</a> to the Bitcoin blockchain.)
      - button:
         - text: Delete It
-        - destination: delete-illegal-content
-        - destination-type: absolute
-        - direction: down
+          destination: delete-illegal-content
+          destination-type: absolute
+          direction: down
      - button:
         - text: Leave It There
-        - destination: leave-illegal-content
-        - destination-type: absolute
-        - direction: right
+          destination: leave-illegal-content
+          destination-type: absolute
+          direction: right
      # TODO: 3rd option: we won't let people write that
 - id: delete-illegal-content
   content:
@@ -124,27 +124,27 @@
      - p: This means that you and anyone else using your database will be violating the law (if such content is uploaded).
      - button:
         - text: No, I don't want that
-        - destination: delete-illegal-content
-        - destination-type: absolute
-        - direction: down
+          destination: delete-illegal-content
+          destination-type: absolute
+          direction: down
      - button:
         - text: Yes, that's fine
-        - destination: 1
-        - destination-type: relative
-        - direction: right
+          destination: 1
+          destination-type: relative
+          direction: right
 - id: who-read
   content:
      - h2: Who should be able to read this data?
      - button:
         - text: Only some parties
-        - destination: some-read
-        - destination-type: absolute
-        - direction: down
+          destination: some-read
+          destination-type: absolute
+          direction: down
      - button:
         - text: Literally Anyone
-        - destination: 2
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
 - id: some-read
   content:
      - h1: No, you don't need a blockchain
@@ -157,14 +157,14 @@
      - p: Do you need to comply to data sovereignty laws?
      - button:
         - text: Yes
-        - destination: geoblocking
-        - destination-type: absolute
-        - direction: down
+          destination: geoblocking
+          destination-type: absolute
+          direction: down
      - button:
         - text: No
-        - destination: 2
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
 - id: geoblocking
   content:
      - h1: No, you don't need a blockchain
@@ -177,27 +177,27 @@
      - p: e.g. supply chain verification, electricity metering, house ownership
      - button:
         - text: Yes
-        - destination: physical-followup
-        - destination-type: absolute
-        - direction: down
+          destination: physical-followup
+          destination-type: absolute
+          direction: down
      - button:
         - text: No
-        - destination: 5
-        - destination-type: relative
-        - direction: right
+          destination: 5
+          destination-type: relative
+          direction: right
 - id: physical-followup
   content:
      - h2: How do the miners writing to the blockchain know what's happening in reality?
      - button:
         - text: We'll vet all write requests to the blockchain
-        - destination: physical-vetting
-        - destination-type: absolute
-        - direction: down
+          destination: physical-vetting
+          destination-type: absolute
+          direction: down
      - button:
         - text: Maths doesn't lie, blockchains are cryptographically secure
-        - destination: physical-maths
-        - destination-type: absolute
-        - direction: right
+          destination: physical-maths
+          destination-type: absolute
+          direction: right
 - id: physical-vetting
   content:
      - h1: No, You don't need a blockchain
@@ -210,19 +210,19 @@
      - p: So if your blockchain says <a href="https://shkspr.mobi/blog/2018/06/how-i-became-leonardo-da-vinci-on-the-blockchain/">some random Twitter user painted the Mona Lisa</a>, then what?
      - button:
         - text: That wouldn't happen. All writes will be verified.
-        - destination: physical-vetting
-        - destination-type: absolute
-        - direction: down
+          destination: physical-vetting
+          destination-type: absolute
+          direction: down
      - button:
         - text: We'll just correct that
-        - destination: physical-edit
-        - destination-type: absolute
-        - direction: down
+          destination: physical-edit
+          destination-type: absolute
+          direction: down
      - button:
         - text: It's in the blockchain, so it must be true
-        - destination: 1
-        - destination-type: relative
-        - direction: right
+          destination: 1
+          destination-type: relative
+          direction: right
 - id: physical-edit
   content:
      - h1: No, you don't need a blockchain
@@ -234,36 +234,36 @@
      - h2: Is financial cost important?
      - button:
         - text: Yes
-        - destination: cost-warning
-        - destination-type: absolute
-        - direction: right # double check all directions
+          destination: cost-warning
+          destination-type: absolute
+          direction: right # double check all directions
      - button:
         - text: No
-        - destination: 2
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
 - id: cost-warning
   content:
      - h2: You probably don't want a blockchain
      - p: Blockchains require many expensive computers burn a huge amount of energy playing <a href="https://youtu.be/ZH-cXBhkl-E?t=20s">Number Wang</a>, to decide who gets to write to the database. So blockchains are expensive to run. Also, buzzword consultants charge high fees.
      - button:
         - text: I'm willing to pay more
-        - destination: 1
-        - destination-type: relative
-        - direction: right # double check all directions
+          destination: 1
+          destination-type: relative
+          direction: right # double check all directions
 - id: write-speed
   content:
      - h2: How many writes do you need to deal with?
      - button:
         - text: More than 3 per second
-        - destination: too-slow
-        - destination-type: absolute
-        - direction: down # double check all directions
+          destination: too-slow
+          destination-type: absolute
+          direction: down # double check all directions
      - button:
         - text: Less than 3 per second
-        - destination: 2
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
 - id: too-slow
   content:
      - h1: No, You don't need a blockchain
@@ -277,14 +277,14 @@
      - h2: Is reducing greenhouse gas emissions important?
      - button:
         - text: Yes
-        - destination: emissions-a
-        - destination-type: absolute
-        - direction: down # double check all directions
+          destination: emissions-a
+          destination-type: absolute
+          direction: down # double check all directions
      - button:
         - text: No
-        - destination: 2
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
 - id: emissions-a
   content:
      - h1: You probably don't want a blockchain
@@ -293,22 +293,22 @@
      - p: Other types of blockchains have been proposed, which use <i>Proof-of-Stake</i> or <i>Proof-of-Storage</i> instead of <i>Proof-of-Work</i>. These are largely <a href="https://en.wikipedia.org/wiki/Vaporware">vapourware</a>.
      - button:
         - text: Screw the environment, I want a blockchain!
-        - destination: 1
-        - destination-type: relative
-        - direction: right
+          destination: 1
+          destination-type: relative
+          direction: right
 - id: merkle
   content:
      - h2: Do you want a cryptographically secure, append-only, hash-based Merkle Tree database?
      - button:
         - text: No
-        - destination: no-merkle
-        - destination-type: absolute
-        - direction: down
+          destination: no-merkle
+          destination-type: absolute
+          direction: down
      - button:
         - text: Yes
-        - destination: 2
-        - destination-type: relative
-        - direction: down
+          destination: 2
+          destination-type: relative
+          direction: down
 - id: no-merkle
   content:
      - p: That's what a blockchain is. So
@@ -321,14 +321,14 @@
      - p: If you want, you can use cryptographic signatures to verify writes to the repo. # TODO: reference
      - button:
         - text: No
-        - destination: 1
-        - destination-type: relative
-        - direction: right
+          destination: 2
+          destination-type: relative
+          direction: right
      - button:
         - text: Yes
-        - destination: git-a
-        - destination-type: absolute
-        - direction: down
+          destination: git-a
+          destination-type: absolute
+          direction: down
 - id: git-a
   content:
      - h1: No, you don't want a blockchain
@@ -336,7 +336,7 @@
      - p: Git repos are like blockchains. The main differences are that they don't emit more pollution than whole countries, and they have useable write throughput rates. # references
      - p: Also, git is a decade old well proven technology which most developers already have the skills to use. Whereas blockchain projects are largely vapourware, with eye-watering consultancy price tags.
 # TODO: cryptocurrency question
-- id: yes
+- id: yes-blockchain
   content:
      - h1: Ok, maybe you should use a blockchain
      - p: I hope the emissions, cost and low performance are worth it.
