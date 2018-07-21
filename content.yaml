@@ -5,7 +5,7 @@
         - text: Find Out
           destination: 1
           destination-type: relative
-          direction: right
+          direction: left
 - id: save-data
   content:
      - h2: Do you need to save data?
@@ -13,12 +13,12 @@
         - text: No
           destination: no-save-data
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Yes
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: no-save-data
   content:
      - h1: No, you don't need a blockchain
@@ -31,12 +31,12 @@
         - text: Just my organisation
           destination: no-write-data
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Other parties too
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: no-write-data
   content:
      - h1: No, you don't need a blockchain
@@ -49,37 +49,36 @@
         - text: Only Some People
           destination: some-write
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Literally Anyone
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: some-write
   content:
      - h1: No, you don't need a blockchain
      - p: You're only allowing trusted parties to write to the database. So you'll need an authority who approves and denies parties wanting to write to the database.
-     - p: The sole reason blockchains were invented was to ensure that no one has the authority to deny anyone write access to the database.
+     - p: The reason blockchains were invented was to ensure that no one has the authority to deny anyone write access to the database.
      - p: Just use a normal database. It will be faster, cheaper and greener.
 - id: delete-data-q
   content:
      - h2: Do you need the ability to delete data?
      - p: For example, the new GDPR laws mandate that under certain circumstances you must delete data when customers ask
-     - h2: Who else can write some data?
      - button:
         - text: Sometimes
           destination: delete-data-a
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Never
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: delete-data-a
   content:
      - h1: No, you don't need a blockchain
-     - p: The sole reason blockchains were invented was to make an immutable, append-only database. If you use a blockchain you <a href="https://davidgerard.co.uk/blockchain/2018/06/11/yougov-directs-gdpr-compliant-blockchain-gdpr-laundering-as-a-service/">cannot delete data in it</a>.
+     - p: The reason blockchains were invented was to make an immutable, append-only database. If you use a blockchain you <a href="https://davidgerard.co.uk/blockchain/2018/06/11/yougov-directs-gdpr-compliant-blockchain-gdpr-laundering-as-a-service/">cannot delete data in it</a>.
      - p: Editable blockchains are like infrared coloured fireworks.                     They're straightforward to build, but there's no point creating such a thing.
      - p: Just use a normal database. You'll be able to comply with privacy laws that way.
 - id: blunders-q
@@ -90,12 +89,12 @@
         - text: Fix It
           destination: delete-data-a
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Leave It
           destination: 1
           destination-type: relative
-          direction: right
+          direction: left
 - id: illegal-content
   content:
      - h2: Illegal Content
@@ -105,17 +104,17 @@
         - text: Delete It
           destination: delete-illegal-content
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Leave It There
           destination: leave-illegal-content
           destination-type: absolute
-          direction: right
+          direction: left
      # TODO: 3rd option: we won't let people write that
 - id: delete-illegal-content
   content:
      - h1: No, you don't need a blockchain
-     - p: The sole reason blockchains were invented was to make an immutable, censorship-proof database. If you use a blockchain you cannot censor data written to it.
+     - p: The reason blockchains were invented was to make an immutable, censorship-proof database. If you use a blockchain you cannot censor data written to it.
      - p: Editable blockchains are like infrared coloured fireworks.                     They're straightforward to build, but there's no point creating such a thing.
      - p: Just use a normal database. That way other parties can't make it illegal to store or transmit your own database.
 - id: leave-illegal-content
@@ -126,12 +125,12 @@
         - text: No, I don't want that
           destination: delete-illegal-content
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Yes, that's fine
           destination: 1
           destination-type: relative
-          direction: right
+          direction: left
 - id: who-read
   content:
      - h2: Who should be able to read this data?
@@ -139,18 +138,18 @@
         - text: Only some parties
           destination: some-read
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Literally Anyone
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: some-read
   content:
      - h1: No, you don't need a blockchain
      - p: You're only allowing trusted parties to read the database. You'll need an authority who approves and denies parties wanting to read the database.
-     - p: The sole reason blockchains were invented was to ensure that no one has the authority to deny read access to the database.
-     - p: Just use a normal database. It will be faster, cheaper and greener.
+     - p: The reason blockchains were invented was to ensure that no one has the authority to deny read access to the database.
+     - p: Just use a normal database.  It will be faster, cheaper and greener.
 - id: country
   content:
      - h2: Do you need to keep the data in one country?
@@ -159,32 +158,32 @@
         - text: Yes
           destination: geoblocking
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: No
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: geoblocking
   content:
      - h1: No, you don't need a blockchain
-     - p: The sole reason blockchains were invented was to ensure that no one has the authority to deny read and write access to the database.
-     - p: If untrusted parties can read the database, what's to stop them from making a copy of that data and sending it overseas?
+     - p: The reason blockchains were invented was to ensure that no one has the authority to deny read and write access to the database.
+     - p: We've already established that untrusted parties can read the database. What's to stop them from making a copy of that data and sending it overseas?
      - p: Just use a normal database. That way you'll be able to see and control where the data resides.
 - id: IRL
   content:
      - h2: Is the data about verifying or tracking physical things?
-     - p: e.g. supply chain verification, electricity metering, house ownership
+     - p: supply chain verification, electricity metering, house ownership ...
      - button:
         - text: Yes
           destination: physical-followup
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: No
           destination: 5
           destination-type: relative
-          direction: right
+          direction: left
 - id: physical-followup
   content:
      - h2: How do the miners writing to the blockchain know what's happening in reality?
@@ -192,12 +191,12 @@
         - text: We'll vet all write requests to the blockchain
           destination: physical-vetting
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Maths doesn't lie, blockchains are cryptographically secure
           destination: physical-maths
           destination-type: absolute
-          direction: right
+          direction: left
 - id: physical-vetting
   content:
      - h1: No, You don't need a blockchain
@@ -212,22 +211,22 @@
         - text: That wouldn't happen. All writes will be verified.
           destination: physical-vetting
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: We'll just correct that
           destination: physical-edit
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: It's in the blockchain, so it must be true
-          destination: 1
+          destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: physical-edit
   content:
      - h1: No, you don't need a blockchain
-     - p: The sole reason blockchains were invented was to make an immutable, censorship-proof database. If you use a blockchain, no centrala authority has the power to unilaterally modify records.
-     - p: Editable blockchains are like infrared coloured fireworks.                     They're straightforward to build, but there's no point creating such a thing.
+     - p: The reason blockchains were invented was to make an immutable, censorship-proof database. That means no central authority should have the power to unilaterally modify records.
+     - p: Editable blockchains are like infrared coloured fireworks. They're straightforward to build, but there's no point creating such a thing.
      - p: Just use a normal database. That way other parties can't make it illegal to store or transmit your own database.
 - id: cost
   content:
@@ -236,21 +235,21 @@
         - text: Yes
           destination: cost-warning
           destination-type: absolute
-          direction: right # double check all directions
+          direction: left # double check all directions
      - button:
         - text: No
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: cost-warning
   content:
      - h2: You probably don't want a blockchain
-     - p: Blockchains require many expensive computers burn a huge amount of energy playing <a href="https://youtu.be/ZH-cXBhkl-E?t=20s">Number Wang</a>, to decide who gets to write to the database. So blockchains are expensive to run. Also, buzzword consultants charge high fees.
+     - p: Blockchains require many expensive computers burn a huge amount of energy playing <a href="https://youtu.be/ZH-cXBhkl-E?t=21s">Number Wang</a>, to decide who gets to write to the database. So blockchains are expensive to run. Also, buzzword consultants charge high fees.
      - button:
         - text: I'm willing to pay more
           destination: 1
           destination-type: relative
-          direction: right # double check all directions
+          direction: left # double check all directions
 - id: write-speed
   content:
      - h2: How many writes do you need to deal with?
@@ -258,17 +257,17 @@
         - text: More than 3 per second
           destination: too-slow
           destination-type: absolute
-          direction: down # double check all directions
+          direction: up # double check all directions
      - button:
         - text: Less than 3 per second
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: too-slow
   content:
      - h1: No, You don't need a blockchain
      - p: There's a law in mathematics that says you can't have truly distributed databases, without central orchestration.
-     - p: Satoshi (the inventor of blockchains) found a loophole. It's possible, but only if you deliberately slow everything down, a lot.
+     - p: Satoshi (the inventor of blockchains) found a loophole. It's possible, but only if you deliberately slow everything down, a lot. # TODO: podcast link
      - p: Bitcoin is the world's most famous blockchain, and it can only process about 3 transactions per second. Other versions of that algorithm can deal with a little bit more, typically at the expense of security. Claims of substantially faster blockchains are typically <a href="https://en.wikipedia.org/wiki/Vaporware">vapourware</a>. # TODO: look up lightening
      - p: If you need performance, just use a normal blockchain.
      # TODO: look up TODO notes from other
@@ -279,23 +278,23 @@
         - text: Yes
           destination: emissions-a
           destination-type: absolute
-          direction: down # double check all directions
+          direction: up # double check all directions
      - button:
         - text: No
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
 - id: emissions-a
   content:
-     - h1: You probably don't want a blockchain
+     - h1: You don't want a blockchain
      - p: There's a law in mathematics that says you can't have truly distributed databases, without central orchestration.
-     - p: Satoshi (the inventor of blockchains) found a loophole. It's possible, by burning as much energy as a whole country, spent powering many computers playing <a href="https://youtu.be/ZH-cXBhkl-E?t=20s">Number Wang</a>. Only once a computer wins Number Wang, it may write something to the database. # TODO: country reference
+     - p: Satoshi (the inventor of blockchains) found a loophole. It's possible, by burning as much energy as a whole country, spent powering many computers playing <a href="https://youtu.be/ZH-cXBhkl-E?t=21s">Number Wang</a>. Only once a computer wins Number Wang can it write something to the database. # TODO: country reference
      - p: Other types of blockchains have been proposed, which use <i>Proof-of-Stake</i> or <i>Proof-of-Storage</i> instead of <i>Proof-of-Work</i>. These are largely <a href="https://en.wikipedia.org/wiki/Vaporware">vapourware</a>.
      - button:
         - text: Screw the environment, I want a blockchain!
           destination: 1
           destination-type: relative
-          direction: right
+          direction: left
 - id: merkle
   content:
      - h2: Do you want a cryptographically secure, append-only, hash-based Merkle Tree database?
@@ -303,12 +302,12 @@
         - text: No
           destination: no-merkle
           destination-type: absolute
-          direction: down
+          direction: up
      - button:
         - text: Yes
           destination: 2
           destination-type: relative
-          direction: down
+          direction: left
 - id: no-merkle
   content:
      - p: That's what a blockchain is. So
@@ -317,22 +316,22 @@
   content:
      - h2: Can you use git?
      - p: <a href="https://git-scm.com/">git</a> is a very popular tool for managing code.
-     - p: It's designed to allow multiple people to modify code in the repository at the same time. It has an auditable history of all changes made to the data. Most developers already know how to use it, and there's a large ecosystem of <a href="https://www.gitkraken.com/">tools</a> and <a href="http://gitlab.com/">hosting</a> <a href="github.com">systems</a> for it.
+     - p: It's designed to allow multiple people to modify files at the same time. It has an auditable history of all changes made to the data. Most developers already know how to use it, and there's a large ecosystem of <a href="https://www.gitkraken.com/">tools</a> and <a href="https://gitlab.com/">hosting</a> <a href="https://www.github.com">systems</a> for it.
      - p: If you want, you can use cryptographic signatures to verify writes to the repo. # TODO: reference
      - button:
         - text: No
           destination: 2
           destination-type: relative
-          direction: right
+          direction: left
      - button:
         - text: Yes
           destination: git-a
           destination-type: absolute
-          direction: down
+          direction: up
 - id: git-a
   content:
      - h1: No, you don't want a blockchain
-     - p: Just use git.
+     - h1: Just use git.
      - p: Git repos are like blockchains. The main differences are that they don't emit more pollution than whole countries, and they have useable write throughput rates. # references
      - p: Also, git is a decade old well proven technology which most developers already have the skills to use. Whereas blockchain projects are largely vapourware, with eye-watering consultancy price tags.
 # TODO: cryptocurrency question
@@ -344,3 +343,4 @@
 #TODO: check on mobile
 #TODO: ask David Gerard
 #TODO: custom domain and hosting
+# TODO reference original
