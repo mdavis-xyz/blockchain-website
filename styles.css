@@ -24,6 +24,11 @@ h2 {
    text-transform: uppercase;
 }
 
+p {
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
 
 section {
    left: 0%;
