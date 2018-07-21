@@ -112,7 +112,7 @@
           destination-type: absolute
           direction: left
      - button:
-        - text: Only nice people will be allowed to write to the blockchain
+        - text: Won't happen. Only nice people will be allowed to write to the blockchain
           destination: some-write
           destination-type: absolute
           direction: up
@@ -321,7 +321,7 @@
      - h2: Can you use git?
      - p: <a href="https://git-scm.com/">git</a> is a very popular tool for managing code.
      - p: It's designed to allow multiple people to modify files at the same time. It has an auditable history of all changes made to the data. Most developers already know how to use it, and there's a large ecosystem of <a href="https://www.gitkraken.com/">tools</a> and <a href="https://gitlab.com/">hosting</a> <a href="https://www.github.com">systems</a> for it.
-     - p: If you want, you can use <a href="https://help.github.com/articles/signing-commits-using-gpg/">cryptographic signatures</a> to verify writes to the repo. # TODO: reference
+     - p: If you want, you can use <a href="https://help.github.com/articles/signing-commits-using-gpg/">cryptographic signatures</a> to verify writes to the repo.
      - button:
         - text: No
           destination: 2
@@ -343,7 +343,7 @@
      - h2: Are you making a new cryptocurrency?
      - button:
         - text: No
-          destination: 3
+          destination: 4
           destination-type: relative
           direction: left
      - button:
@@ -368,16 +368,37 @@
 - id: stupid-coin
   content:
      - h1: No, you don't need a blockchain
-     - p: Yes, blockchains are usefull for creating cryptocurrencies. But you shouldn't be making this new cryptocurrency.
+     - p: Yes, blockchains are usefull for creating cryptocurrencies. However you shouldn't be making yet another shit-coin.
 - id: reasonable-coin
   content:
      - h1: Yes, you do need a blockchain
      - p: Cryptocurrencies are one of the few use-cases where blockchains are the best-available choice.
      - p: Make sure your coin is uniquely usefull.
-     - p: Be carefull though, the world of cryptocurrencies is not very kind to those who write buggy code or have consumer-grade security # TODO: references?
+     - p: Be carefull though, the world of cryptocurrencies is not very kind to those who write <a href="https://davidgerard.co.uk/blockchain/ethereum-smart-contracts-in-practice/">buggy code</a> or have consumer-grade security <sup><a href="https://twitter.com/lopp/status/1015586077850177536?s=21">[1]</a><a href="https://www.reddit.com/r/btc/comments/7ofrqf/warning_brutal_scam_guy_buys_a_ledger_nano_wallet/">[2]</a><a href="https://www.reddit.com/r/legaladvice/comments/8dxyb8/i_bought_112_bitcoin_in_2013_friend_that_sold/">[3]</a><a href="https://www.reddit.com/r/CryptoCurrency/comments/8pcxi3/neon_wallet_hacked_150200k_anything_i_can_do/"<[4]</a><a href="https://www.reddit.com/r/Bitcoin/comments/81yyxh/lost_bitcoin_lost_my_diary_that_stored_my_back_up/">[5]</a><a href="https://www.reddit.com/r/CryptoCurrency/comments/8dnbeh/coins_gone_hope_you_learn_from_my_mistake/">[6]</a><a href="https://www.reddit.com/r/Monero/comments/7lb7rm/be_your_own_bank_a_cautionary_tale/">[7]</a></sup>. # TODO: references?
+
+- id: maybe-blockchain
+  content:
+     - h2: Are you trying to thwart government control of something?
+     - p: For example, <a href="https://blockchain-dns.info/">censorship-proof domain ownership and DNS</a>, or <a href="https://twitter.com/wikileaks/status/80774521350668288">a way to donate to Wikileaks</a>?
+     - button:
+        - text: Yes
+          destination: yes-blockchain
+          destination-type: absolute
+          direction: up
+     - button:
+        - text: No, I'm not trying to defy governments or laws
+          destination: end-no
+          destination-type: absolute
+          direction: up
+- id: end-no
+  content:
+     - h1: No, you don't need a blockchain
+     - p: Just use a normal database
+     - p: It will be cheaper, greener, faster and more scalable
+- id: yes-blockchain
   content:
      - h1: Ok, maybe you should use a blockchain
-     - p: I hope the emissions, cost and low performance are worth it.
+     - p: I hope the emissions, cost, low performance, legal risk and ethical costs are worth it.
 # TODO: check on mobile
 # TODO: ask David Gerard
 # TODO: custom domain and hosting
