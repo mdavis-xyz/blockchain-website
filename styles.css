@@ -16,6 +16,15 @@ h1 {
    text-transform: uppercase;
 }
 
+
+h2 {
+   font-size: 2em;
+   color: #fff;
+   font-family: Roboto, "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
+   text-transform: uppercase;
+}
+
+
 section {
    left: 0%;
    float: left;
@@ -185,6 +194,7 @@ section {
    text-decoration: none;
    border-radius: 2px;
    margin-bottom: 10px;
+   text-transform: capitalize;
 }
 
 .pure-button-hover,
