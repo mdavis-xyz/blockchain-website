@@ -196,7 +196,6 @@ section {
    margin-down: 10px;
    text-transform: capitalize;
    font-weight: bold;
-   width: auto;
 }
 
 .pure-button-hover,
@@ -243,6 +242,10 @@ section {
 .pure-button-selected {
    background-color: rgb(0, 120, 231);
    color: #fff;
+}
+
+.button-wrap {
+   display: inline-block;
 }
 
 #buttonboxback {
@@ -305,7 +308,7 @@ section {
 	display: block;
 	position: absolute;
 	right: 100%;
-	top: 50%;
+	top: 0%;
 	margin-up: -9px;
 	width: 0;
 	height: 0;
