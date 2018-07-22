@@ -122,12 +122,12 @@ Resources:
               S3ObjectVersion: !Ref "loggerS3Version"
             Handler: main.lambda_handler
             Runtime: python3.6
-            Timeout: 10
+            Timeout: 30
             Role:
                 "Fn::GetAtt": ["ExecutionRole", "Arn"]
             Environment:
                 Variables:
-                   view_table:
+                   viewHistoryTable:
                        Ref: "viewHistoryTable"
                    errorHandlerArn:
                        Fn::GetAtt: ["errorHandler", "Arn"]
@@ -165,8 +165,8 @@ Resources:
       restapi:
          Type: "AWS::ApiGateway::RestApi"
          Properties:
-             Name: example
-             Description: "example thing"
+             Name: blockchainviewcounter
+             Description: "For incrementing the count of views to my blockchain website"
       apistage:
          DependsOn:
                   - "ApiGatewayAccount"
