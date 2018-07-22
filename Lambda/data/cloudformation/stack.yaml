@@ -233,7 +233,7 @@ Resources:
                     Ref: "restapi"
             ParentId:
                  "Fn::GetAtt": ["restapi", "RootResourceId"]
-            PathPart: "{selector+}"
+            PathPart: "increment"
       loggerany:
          DependsOn: "permittriggerlambda"
          Type: "AWS::ApiGateway::Method"
