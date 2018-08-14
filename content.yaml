@@ -398,7 +398,7 @@
 - id: yes-blockchain
   content:
      - h1: Ok, maybe you should use a blockchain
-     - p: I hope the emissions, cost, low performance, legal risk and ethical costs are worth it.
+     - p: I hope the emissions, cost, low performance, legal risk and <a href="https://www.coindesk.com/the-first-augur-assassination-markets-have-arrived/">ethical costs</a> are worth it.
 # TODO: check on mobile
 # TODO: ask David Gerard
 # TODO: custom domain and hosting
