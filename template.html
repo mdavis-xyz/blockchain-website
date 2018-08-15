@@ -13,7 +13,7 @@
    <a href="javascript:back()" class="left-arrow hidden" id="back-button">back</a>
 
    % for (i,section) in enumerate(content):
-      <div ${'id="%s"' % section['id'] if 'id' in section else ''} class="section ${'slide-in-left' if i == 0 else 'slid-out'}">
+      <section ${'id="%s"' % section['id'] if 'id' in section else ''} class="${'slide-in-left' if i == 0 else 'slid-out'}">
           % for el in section['content']:
               % if 'button' in el:
                  <div class='button-wrap'>
@@ -41,7 +41,7 @@
                  <% raise NotImplementedError %>
               %endif
           % endfor
-      </div>
+      </section>
    % endfor
 
    </body>

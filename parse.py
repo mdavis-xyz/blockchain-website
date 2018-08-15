@@ -59,7 +59,8 @@ def htmlize(content):
     if (errors != None) and (len(errors) > 0):
         pp.pprint(errors)
         print("Error: invalid html")
-        exit(1)
+        # exit(1)
+        print('continuing anyway')
 
     else:
         print("html valid!")

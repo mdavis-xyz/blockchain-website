@@ -42,7 +42,7 @@ p {
    }
 
    body {
-      background: #2FF;
+      background: #F2F;
    }
 }
 
@@ -54,7 +54,7 @@ a {
    color: #007fff;
 }
 
-#section {
+section {
    left: 0%;
    float: left;
    /*width: 100vw;
