@@ -9,6 +9,7 @@ body {
    width: 100vw;
 }
 
+
 h1 {
    font-size: 2.5em;
    color: #fff;
@@ -28,6 +29,21 @@ p {
    padding-left: 15px;
    padding-right: 15px;
 }
+
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+   h1 {
+      font-size: 5em;
+   }
+   h2 {
+      font-size: 4em;
+   }
+   p {
+      font-size: 150%;
+   }
+}
+
+
+
 
 a {
    text-decoration: none;
@@ -205,6 +221,12 @@ section {
    margin-down: 10px;
    text-transform: capitalize;
    font-weight: bold;
+}
+
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+   .pure-button {
+      font-size: 200%;
+   }
 }
 
 .pure-button-hover,
