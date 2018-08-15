@@ -60,6 +60,9 @@ function back(){
    console.log(`Sliding back from ${currentElID} to ${newElID}`);
    slideNoHist(currentElID,newElID,direction);
    if(navHistory.length == 0) {
+      if (backButton == null){
+         backButton = document.getElementById('back-button');
+      }
       backButton.setAttribute('class', 'left-arrow slide-out-button');
    }
 }
