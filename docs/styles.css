@@ -375,3 +375,42 @@ section {
    0% { transform: translateX(0%); }
    100% { transform: translateX(-200%); }
 }
+
+
+
+
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+   #buttonboxback {
+       width: 50px;
+       height: 20px;
+       margin-down: 20px;
+       margin-left: 30px;
+       border-radius: 3px;
+   }
+
+   #buttonboxback:before {
+       left: -17px;
+       border-width: 20px 20px 20px 0;
+   }
+
+
+   .left-arrow {
+      left: 50px;
+      bottom: 30px;
+   	padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 8px;
+      padding-right: 8px;
+      height: 24px;
+      font-size: 20px;
+   }
+   .left-arrow:after {
+   	margin-up: -16px;
+   	border-top: 16px solid transparent;
+   	border-right: 20px solid #E6E6E6;
+   	border-bottom: 16px solid transparent;
+   	border-left: 16px solid transparent;
+   }
+
+}
