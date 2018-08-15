@@ -1,6 +1,7 @@
 import yaml
 import pprint as pp
 from mako.template import Template
+from tidylib import tidy_document
 
 # pyyaml converts "yes" and "no" to "True" and "False". I don't want that.
 from yaml.constructor import Constructor
@@ -53,6 +54,15 @@ def htmlize(content):
     with open('template.html','r') as f:
         template = Template(f.read())
     html = template.render(content=content)
+
+    document, errors = tidy_document(html,options={'numeric-entities':1})
+    if (errors != None) and (len(errors) > 0):
+        pp.pprint(errors)
+        print("Error: invalid html")
+        exit(1)
+
+    else:
+        print("html valid!")
 
     return(html)
 

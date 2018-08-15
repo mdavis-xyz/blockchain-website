@@ -40,6 +40,10 @@ p {
    p {
       font-size: 150%;
    }
+
+   body {
+      background: #2FF;
+   }
 }
 
 
@@ -50,7 +54,7 @@ a {
    color: #007fff;
 }
 
-section {
+#section {
    left: 0%;
    float: left;
    /*width: 100vw;
@@ -62,7 +66,7 @@ section {
    position: absolute;
    /*display: table-cell;*/
    /*top: 50vh;*/
-   /*margin-down: : auto;*/
+   /*margin-bottom: : auto;*/
    margin: auto;
    /*padding-bottom: 3vh;*/
    text-align: center;
@@ -75,7 +79,7 @@ section {
    align-items:center;
    width:100vw;
    height:90vh;
-   /*margin-down: 5vh*/
+   /*margin-bottom: 5vh*/
 }
 
 .slid-out {
@@ -218,7 +222,7 @@ section {
    background-color: #E6E6E6;
    text-decoration: none;
    border-radius: 2px;
-   margin-down: 10px;
+   margin-bottom: 10px;
    text-transform: capitalize;
    font-weight: bold;
 }
@@ -226,6 +230,7 @@ section {
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
    .pure-button {
       font-size: 200%;
+      border-radius: 4px;
    }
 }
 
@@ -284,7 +289,7 @@ section {
     height: 10px;
     background-color: black;
     position: absolute;
-    margin-down: 20px;
+    margin-bottom: 20px;
     margin-left: 30px;
     border-radius: 3px;
     bottom: 0;
@@ -384,7 +389,7 @@ section {
    #buttonboxback {
        width: 50px;
        height: 20px;
-       margin-down: 20px;
+       margin-bottom: 20px;
        margin-left: 30px;
        border-radius: 3px;
    }
