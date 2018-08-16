@@ -4,17 +4,6 @@ var navHistory = [];
 var navDirections = [];
 var currentElID = null; // won't be used until we navigate anyway
 
-$(document).ready(function() {
-   var $sliderL = document.getElementById('slider-l');
-   var $sliderR = document.getElementById('slider-r');
-   var $toggle = document.getElementById('toggle');
-
-   backButton = document.getElementById('back-button');
-
-});
-
-
-
 function slide(oldElID,newElID,direction){
    slideNoHist(oldElID,newElID,direction);
    if(navHistory.length == 0) {
