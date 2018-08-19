@@ -64,22 +64,6 @@ p {
    font-size: 1.2rem;
 }
 
-@media (min-width:30em)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
-   h1 {
-   }
-   h2 {
-   }
-   p {
-   }
-
-   body {
-      background: #F2F;
-   }
-}
-
-
-
-
 a {
    text-decoration: none;
    color: #007fff;
@@ -256,13 +240,6 @@ section {
    border-radius: 2px;
    text-transform: capitalize;
    font-weight: bold;
-}
-
-@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
-   .pure-button {
-      font-size: 200%;
-      border-radius: 4px;
-   }
 }
 
 .pure-button-hover,
