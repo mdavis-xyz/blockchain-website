@@ -2,6 +2,34 @@
    font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
+html {
+   font-size: 50%;
+}
+
+@media (min-width:20em)  {
+   html {
+      font-size: 66%;
+   }
+}
+
+@media (min-width:30em)  {
+   html {
+      font-size: 100%;
+   }
+}
+
+@media (min-width:45em)  {
+   html {
+      font-size: 150%;
+   }
+}
+
+@media (min-width:60em)  {
+   html {
+      font-size: 200%;
+   }
+}
+
 body {
    background: #222;
    overflow: hidden;
@@ -12,31 +40,31 @@ body {
 
 
 h1 {
-   font-size: 3em;
+   font-size: 3rem;
    color: #fff;
    font-family: Roboto, "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
    text-transform: uppercase;
-   padding-left: 0.5em;
-   padding-right: 0.5em;
+   padding-left: 0.5rem;
+   padding-right: 0.5rem;
 }
 
 
 h2 {
-   font-size: 2.5em;
+   font-size: 2.5rem;
    color: #fff;
    font-family: Roboto, "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
    text-transform: uppercase;
-   padding-left: 0.5em;
-   padding-right: 0.5em;
+   padding-left: 0.5rem;
+   padding-right: 0.5rem;
 }
 
 p {
-   padding-left: 0.5em;
-   padding-right: 0.5em;
-   font-size: 1.2em;
+   padding-left: 0.5rem;
+   padding-right: 0.5rem;
+   font-size: 1.2rem;
 }
 
-@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:30em)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
    h1 {
    }
    h2 {
@@ -216,8 +244,9 @@ section {
 
 .pure-button {
    font-family: inherit;
-   font-size: 1.3em;
-   padding: 0.5em 1em;
+   font-size: 1.3rem;
+   padding: 0.5rem 1rem;
+   margin: 10em;
    color: #444; /* rgba not supported (IE 8) */
    color: rgba(0, 0, 0, 0.80); /* rgba supported */
    border: 1px solid #999;  /*IE 6/7/8*/
@@ -225,7 +254,6 @@ section {
    background-color: #E6E6E6;
    text-decoration: none;
    border-radius: 2px;
-   margin-bottom: 10px;
    text-transform: capitalize;
    font-weight: bold;
 }
@@ -286,26 +314,27 @@ section {
 .button-wrap {
    display: inline-block;
 }
-
+/*
 #buttonboxback {
-    width: 50px;
-    height: 10px;
+    min-width: 5en;
+    height: 2em;
     background-color: black;
     position: absolute;
-    margin-bottom: 20px;
-    margin-left: 30px;
-    border-radius: 3px;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
     bottom: 0;
     left: 0;
+    font-size: 1rem;
 }
 
 #buttonboxback:before {
     content: "";
     position: absolute;
     top: 0;
-    left: -17px;
+    left: -0.5rem;
     border-style: solid;
-    border-width: 20px 20px 20px 0;
+    border-width: 0.5rem 0.5rem 0.5rem 0;
     border-color: transparent black transparent transparent;
 }
 
@@ -323,38 +352,38 @@ section {
 
 #buttonboxback:hover:before {
     border-right-color: lightblue;
-}
+}*/
 
 .left-arrow {
+   font-size: 75%;
 	display: inline-block;
 	position: absolute;
-   left: 30px;
-   bottom: 10px;
+   left: 1.5em;
+   bottom: 1em;
 	background: #E6E6E6;
    margin: auto;
-	padding-top: 2px;
-   padding-bottom: 2px;
-   padding-left: 6px;
-   padding-right: 6px;
-   height: 14px;
-   font-size: x-small;
+	padding-top: 0.25em;
+   padding-bottom: 0.25em;
+   padding-left: 0.5em;
+   padding-right: 0.5em;
+   height: 1.5em;
    text-decoration: none;
    color: #000;
    vertical-align: middle;
 }
+
 .left-arrow:after {
 	content: '';
 	display: block;
 	position: absolute;
 	right: 100%;
 	top: 0%;
-	margin-up: -9px;
+	/*margin-up: 0.5em;*/
 	width: 0;
 	height: 0;
-	border-top: 9px solid transparent;
-	border-right: 15px solid #E6E6E6;
-	border-bottom: 9px solid transparent;
-	border-left: 9px solid transparent;
+	border-top: 1em solid transparent;
+	border-right: 0.75em solid #E6E6E6;
+	border-bottom: 1em solid transparent;
    vertical-align: middle;
 }
 
@@ -382,43 +411,4 @@ section {
 @keyframes slide-out-button {
    0% { transform: translateX(0%); }
    100% { transform: translateX(-200%); }
-}
-
-
-
-
-@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
-
-   #buttonboxback {
-       width: 50px;
-       height: 20px;
-       margin-bottom: 20px;
-       margin-left: 30px;
-       border-radius: 3px;
-   }
-
-   #buttonboxback:before {
-       left: -17px;
-       border-width: 20px 20px 20px 0;
-   }
-
-
-   .left-arrow {
-      left: 50px;
-      bottom: 30px;
-   	padding-top: 4px;
-      padding-bottom: 4px;
-      padding-left: 8px;
-      padding-right: 8px;
-      height: 24px;
-      font-size: 20px;
-   }
-   .left-arrow:after {
-   	margin-up: -16px;
-   	border-top: 16px solid transparent;
-   	border-right: 20px solid #E6E6E6;
-   	border-bottom: 16px solid transparent;
-   	border-left: 16px solid transparent;
-   }
-
 }
