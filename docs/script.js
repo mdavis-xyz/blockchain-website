@@ -44,6 +44,7 @@ function reverseDirection(prevDir){
 }
 
 function back(){
+   console.log("Back button pressed");
    var newElID = navHistory.pop();
    var direction = reverseDirection(navDirections.pop());
    console.log(`Sliding back from ${currentElID} to ${newElID}`);

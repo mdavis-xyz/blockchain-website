@@ -9,8 +9,6 @@
    </head>
    <body>
 
-   <a href="javascript:back()" class="left-arrow hidden" id="back-button">back</a>
-
       <section id="start" class="slide-in-left">
                  <h1>
                     Do you need a blockchain?
@@ -86,7 +84,7 @@
                     </a>
                  </div>
                  <div class='button-wrap'>
-                    <a href="javascript:slide('else-write','delete-data-q','left')" class="pure-button">
+                    <a href="javascript:slide('else-write','IRL','left')" class="pure-button">
                        Literally Anyone
                     </a>
                  </div>
@@ -103,6 +101,95 @@
                  </p>
                  <p>
                     Just use a normal database. It will be faster, cheaper and greener.
+                 </p>
+      </section>
+      <section id="IRL" class="slid-out">
+                 <h2>
+                    Is the data about verifying or tracking physical things?
+                 </h2>
+                 <p>
+                    supply chain verification, electricity metering, house ownership ...
+                 </p>
+                 <div class='button-wrap'>
+                    <a href="javascript:slide('IRL','physical-followup','up')" class="pure-button">
+                       Yes
+                    </a>
+                 </div>
+                 <div class='button-wrap'>
+                    <a href="javascript:slide('IRL','delete-data-q','left')" class="pure-button">
+                       No
+                    </a>
+                 </div>
+      </section>
+      <section id="physical-followup" class="slid-out">
+                 <h2>
+                    How do the miners writing to the blockchain know what's happening in reality?
+                 </h2>
+                 <div class='button-wrap'>
+                    <a href="javascript:slide('physical-followup','some-write','up')" class="pure-button">
+                       Only approved parties may save data
+                    </a>
+                 </div>
+                 <div class='button-wrap'>
+                    <a href="javascript:slide('physical-followup','physical-vetting','up')" class="pure-button">
+                       We'll vet all write requests to the blockchain
+                    </a>
+                 </div>
+                 <div class='button-wrap'>
+                    <a href="javascript:slide('physical-followup','physical-maths','left')" class="pure-button">
+                       Maths doesn't lie, blockchains are cryptographically secure
+                    </a>
+                 </div>
+      </section>
+      <section id="physical-vetting" class="slid-out">
+                 <h1>
+                    No, You don't need a blockchain
+                 </h1>
+                 <p>
+                    If you need to add a verification system to your verification blockchain, why do you need the blockchain?
+                 </p>
+                 <p>
+                    Blockchains are no better at verifying things in the real world than any other database.
+                 </p>
+                 <p>
+                    The hard part of verification is converting real attributes of physical things into bytes. Blockchains don't help with that. They just take the bytes they're given and put them on hard drives, slowly.
+                 </p>
+      </section>
+      <section id="physical-maths" class="slid-out">
+                 <h2>
+                    Are You Sure?
+                 </h2>
+                 <p>
+                    So if your blockchain says <a target="_blank" href="https://shkspr.mobi/blog/2018/06/how-i-became-leonardo-da-vinci-on-the-blockchain/">some random Twitter user painted the Mona Lisa</a>, then what?
+                 </p>
+                 <div class='button-wrap'>
+                    <a href="javascript:slide('physical-maths','physical-vetting','up')" class="pure-button">
+                       That wouldn't happen. All writes will be verified.
+                    </a>
+                 </div>
+                 <div class='button-wrap'>
+                    <a href="javascript:slide('physical-maths','physical-edit','up')" class="pure-button">
+                       We'll just correct that
+                    </a>
+                 </div>
+                 <div class='button-wrap'>
+                    <a href="javascript:slide('physical-maths','delete-data-q','left')" class="pure-button">
+                       It's in the blockchain, so it must be true
+                    </a>
+                 </div>
+      </section>
+      <section id="physical-edit" class="slid-out">
+                 <h1>
+                    No, you don't need a blockchain
+                 </h1>
+                 <p>
+                    The reason blockchains were invented was to make an immutable, censorship-proof database. That means no central authority should have the power to unilaterally modify records.
+                 </p>
+                 <p>
+                    Editable blockchains are like infrared coloured fireworks. They're straightforward to build, but there's no point creating such a thing.
+                 </p>
+                 <p>
+                    Just use a normal database. That way other parties can't make it illegal to store or transmit your own database.
                  </p>
       </section>
       <section id="delete-data-q" class="slid-out">
@@ -139,7 +226,7 @@
       </section>
       <section id="blunders-q" class="slid-out">
                  <h2>
-                    Blunders Happen
+                    Mistakes Happen
                  </h2>
                  <p>
                     What will you do if incorrect data is written to the ledger?
@@ -236,7 +323,7 @@
                     You're only allowing trusted parties to read the database. You'll need an authority who approves or denies parties wanting to read the database.
                  </p>
                  <p>
-                    The reason blockchains were invented was to ensure that no one has the authority to deny read access to the database.
+                    The reason blockchains were invented was to create a database that anyone can read or write to.
                  </p>
                  <p>
                     Just use a normal database.  It will be faster, cheaper and greener.
@@ -255,7 +342,7 @@
                     </a>
                  </div>
                  <div class='button-wrap'>
-                    <a href="javascript:slide('country','IRL','left')" class="pure-button">
+                    <a href="javascript:slide('country','cost','left')" class="pure-button">
                        No
                     </a>
                  </div>
@@ -272,90 +359,6 @@
                  </p>
                  <p>
                     Just use a normal database. That way you'll be able to see and control where the data resides.
-                 </p>
-      </section>
-      <section id="IRL" class="slid-out">
-                 <h2>
-                    Is the data about verifying or tracking physical things?
-                 </h2>
-                 <p>
-                    supply chain verification, electricity metering, house ownership ...
-                 </p>
-                 <div class='button-wrap'>
-                    <a href="javascript:slide('IRL','physical-followup','up')" class="pure-button">
-                       Yes
-                    </a>
-                 </div>
-                 <div class='button-wrap'>
-                    <a href="javascript:slide('IRL','cost','left')" class="pure-button">
-                       No
-                    </a>
-                 </div>
-      </section>
-      <section id="physical-followup" class="slid-out">
-                 <h2>
-                    How do the miners writing to the blockchain know what's happening in reality?
-                 </h2>
-                 <div class='button-wrap'>
-                    <a href="javascript:slide('physical-followup','physical-vetting','up')" class="pure-button">
-                       We'll vet all write requests to the blockchain
-                    </a>
-                 </div>
-                 <div class='button-wrap'>
-                    <a href="javascript:slide('physical-followup','physical-maths','left')" class="pure-button">
-                       Maths doesn't lie, blockchains are cryptographically secure
-                    </a>
-                 </div>
-      </section>
-      <section id="physical-vetting" class="slid-out">
-                 <h1>
-                    No, You don't need a blockchain
-                 </h1>
-                 <p>
-                    If you need to add a verification system to your verification blockchain, why do you need the blockchain?
-                 </p>
-                 <p>
-                    Blockchains are no better at verifying things in the real world than any other database.
-                 </p>
-                 <p>
-                    The hard part of verification is converting real attributes of physical things into bytes. Blockchains don't help with that. They just take the bytes they're given and put them on hard drives, slowly.
-                 </p>
-      </section>
-      <section id="physical-maths" class="slid-out">
-                 <h2>
-                    Are You Sure?
-                 </h2>
-                 <p>
-                    So if your blockchain says <a target="_blank" href="https://shkspr.mobi/blog/2018/06/how-i-became-leonardo-da-vinci-on-the-blockchain/">some random Twitter user painted the Mona Lisa</a>, then what?
-                 </p>
-                 <div class='button-wrap'>
-                    <a href="javascript:slide('physical-maths','physical-vetting','up')" class="pure-button">
-                       That wouldn't happen. All writes will be verified.
-                    </a>
-                 </div>
-                 <div class='button-wrap'>
-                    <a href="javascript:slide('physical-maths','physical-edit','up')" class="pure-button">
-                       We'll just correct that
-                    </a>
-                 </div>
-                 <div class='button-wrap'>
-                    <a href="javascript:slide('physical-maths','cost','left')" class="pure-button">
-                       It's in the blockchain, so it must be true
-                    </a>
-                 </div>
-      </section>
-      <section id="physical-edit" class="slid-out">
-                 <h1>
-                    No, you don't need a blockchain
-                 </h1>
-                 <p>
-                    The reason blockchains were invented was to make an immutable, censorship-proof database. That means no central authority should have the power to unilaterally modify records.
-                 </p>
-                 <p>
-                    Editable blockchains are like infrared coloured fireworks. They're straightforward to build, but there's no point creating such a thing.
-                 </p>
-                 <p>
-                    Just use a normal database. That way other parties can't make it illegal to store or transmit your own database.
                  </p>
       </section>
       <section id="cost" class="slid-out">
@@ -605,6 +608,8 @@
                     I hope the <a target="_blank" href="https://www.cell.com/joule/fulltext/S2542-4351(18)30177-6">emissions</a>, <a target="_blank" href="https://www.blockchain.com/charts/cost-per-transaction?popcorn=extrabuttery">cost</a>, <a target="_blank" href="https://www.blockchain.com/charts/transactions-per-second?timespan=30days">low performance</a>, <a target="_blank" href="https://fc18.ifca.ai/preproceedings/6.pdf">legal risk</a> and <a target="_blank" href="https://www.coindesk.com/the-first-augur-assassination-markets-have-arrived/">ethical costs</a> are worth it.
                  </p>
       </section>
+
+   <a href="javascript:back()" class="left-arrow hidden" id="back-button">back</a>
 
    </body>
 </html>

@@ -62,6 +62,69 @@
      - p: You're only allowing trusted parties to write to the database. So you'll need an authority who approves or denies parties wanting to write to the database.
      - p: The reason blockchains were invented was to ensure that no one has the authority to deny anyone write access to the database.
      - p: Just use a normal database. It will be faster, cheaper and greener.
+- id: IRL
+  content:
+     - h2: Is the data about verifying or tracking physical things?
+     - p: supply chain verification, electricity metering, house ownership ...
+     - button:
+        - text: Yes
+          destination: physical-followup
+          destination-type: absolute
+          direction: up
+     - button:
+        - text: No
+          destination: 5
+          destination-type: relative
+          direction: left
+- id: physical-followup
+  content:
+     - h2: How do the miners writing to the blockchain know what's happening in reality?
+     - button:
+        - text: Only approved parties may save data
+          destination: some-write
+          destination-type: absolute
+          direction: up
+     - button:
+        - text: We'll vet all write requests to the blockchain
+          destination: physical-vetting
+          destination-type: absolute
+          direction: up
+     - button:
+        - text: Maths doesn't lie, blockchains are cryptographically secure
+          destination: physical-maths
+          destination-type: absolute
+          direction: left
+- id: physical-vetting
+  content:
+     - h1: No, You don't need a blockchain
+     - p: If you need to add a verification system to your verification blockchain, why do you need the blockchain?
+     - p: Blockchains are no better at verifying things in the real world than any other database.
+     - p: The hard part of verification is converting real attributes of physical things into bytes. Blockchains don't help with that. They just take the bytes they're given and put them on hard drives, slowly.
+- id: physical-maths
+  content:
+     - h2: Are You Sure?
+     - p: So if your blockchain says <a target="_blank" href="https://shkspr.mobi/blog/2018/06/how-i-became-leonardo-da-vinci-on-the-blockchain/">some random Twitter user painted the Mona Lisa</a>, then what?
+     - button:
+        - text: That wouldn't happen. All writes will be verified.
+          destination: physical-vetting
+          destination-type: absolute
+          direction: up
+     - button:
+        - text: We'll just correct that
+          destination: physical-edit
+          destination-type: absolute
+          direction: up
+     - button:
+        - text: It's in the blockchain, so it must be true
+          destination: 2
+          destination-type: relative
+          direction: left
+- id: physical-edit
+  content:
+     - h1: No, you don't need a blockchain
+     - p: The reason blockchains were invented was to make an immutable, censorship-proof database. That means no central authority should have the power to unilaterally modify records.
+     - p: Editable blockchains are like infrared coloured fireworks. They're straightforward to build, but there's no point creating such a thing.
+     - p: Just use a normal database. That way other parties can't make it illegal to store or transmit your own database.
 - id: delete-data-q
   content:
      - h2: Do you need the ability to delete data?
@@ -84,7 +147,7 @@
      - p: Just use a normal database. You'll be able to comply with privacy laws that way.
 - id: blunders-q
   content:
-     - h2: Blunders Happen
+     - h2: Mistakes Happen
      - p: What will you do if incorrect data is written to the ledger?
      - button:
         - text: Fix It
@@ -153,7 +216,7 @@
   content:
      - h1: No, you don't need a blockchain
      - p: You're only allowing trusted parties to read the database. You'll need an authority who approves or denies parties wanting to read the database.
-     - p: The reason blockchains were invented was to ensure that no one has the authority to deny read access to the database.
+     - p: The reason blockchains were invented was to create a database that anyone can read or write to.
      - p: Just use a normal database.  It will be faster, cheaper and greener.
 - id: country
   content:
@@ -175,64 +238,6 @@
      - p: The reason blockchains were invented was to ensure that no one has the authority to deny read and write access to the database.
      - p: We've already established that untrusted parties can read the database. What's to stop them from making a copy of that data and sending it overseas?
      - p: Just use a normal database. That way you'll be able to see and control where the data resides.
-- id: IRL
-  content:
-     - h2: Is the data about verifying or tracking physical things?
-     - p: supply chain verification, electricity metering, house ownership ...
-     - button:
-        - text: Yes
-          destination: physical-followup
-          destination-type: absolute
-          direction: up
-     - button:
-        - text: No
-          destination: 5
-          destination-type: relative
-          direction: left
-- id: physical-followup
-  content:
-     - h2: How do the miners writing to the blockchain know what's happening in reality?
-     - button:
-        - text: We'll vet all write requests to the blockchain
-          destination: physical-vetting
-          destination-type: absolute
-          direction: up
-     - button:
-        - text: Maths doesn't lie, blockchains are cryptographically secure
-          destination: physical-maths
-          destination-type: absolute
-          direction: left
-- id: physical-vetting
-  content:
-     - h1: No, You don't need a blockchain
-     - p: If you need to add a verification system to your verification blockchain, why do you need the blockchain?
-     - p: Blockchains are no better at verifying things in the real world than any other database.
-     - p: The hard part of verification is converting real attributes of physical things into bytes. Blockchains don't help with that. They just take the bytes they're given and put them on hard drives, slowly.
-- id: physical-maths
-  content:
-     - h2: Are You Sure?
-     - p: So if your blockchain says <a target="_blank" href="https://shkspr.mobi/blog/2018/06/how-i-became-leonardo-da-vinci-on-the-blockchain/">some random Twitter user painted the Mona Lisa</a>, then what?
-     - button:
-        - text: That wouldn't happen. All writes will be verified.
-          destination: physical-vetting
-          destination-type: absolute
-          direction: up
-     - button:
-        - text: We'll just correct that
-          destination: physical-edit
-          destination-type: absolute
-          direction: up
-     - button:
-        - text: It's in the blockchain, so it must be true
-          destination: 2
-          destination-type: relative
-          direction: left
-- id: physical-edit
-  content:
-     - h1: No, you don't need a blockchain
-     - p: The reason blockchains were invented was to make an immutable, censorship-proof database. That means no central authority should have the power to unilaterally modify records.
-     - p: Editable blockchains are like infrared coloured fireworks. They're straightforward to build, but there's no point creating such a thing.
-     - p: Just use a normal database. That way other parties can't make it illegal to store or transmit your own database.
 - id: cost
   content:
      - h2: Is financial cost important?

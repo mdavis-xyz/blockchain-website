@@ -9,8 +9,6 @@
    </head>
    <body>
 
-   <a href="javascript:back()" class="left-arrow hidden" id="back-button">back</a>
-
    % for (i,section) in enumerate(content):
       <section ${'id="%s"' % section['id'] if 'id' in section else ''} class="${'slide-in-left' if i == 0 else 'slid-out'}">
           % for el in section['content']:
@@ -42,6 +40,8 @@
           % endfor
       </section>
    % endfor
+
+   <a href="javascript:back()" class="left-arrow hidden" id="back-button">back</a>
 
    </body>
 </html>
