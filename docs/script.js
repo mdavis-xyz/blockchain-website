@@ -17,6 +17,7 @@ function slideNoHist(oldElID,newElID,direction){
    var newEl = document.getElementById(newElID);
    var oldEl = document.getElementById(oldElID);
    console.log(`sliding ${oldElID} to ${direction} to make room for ${newElID} `);
+   newEl.scrollTop = 0;
    newEl.setAttribute('class', 'section slide-in-' + direction);
    oldEl.setAttribute('class', 'section slide-out-' + direction);
    newEl.scrollTop = 0;
