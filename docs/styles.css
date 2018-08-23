@@ -4,6 +4,7 @@
 
 html {
    font-size: 50%;
+   color: #fff;
 }
 
 @media (min-width:20em)  {
@@ -41,7 +42,6 @@ body {
 
 h1 {
    font-size: 3rem;
-   color: #fff;
    font-family: Roboto, "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
    text-transform: uppercase;
    padding-left: 0.5rem;
@@ -51,7 +51,6 @@ h1 {
 
 h2 {
    font-size: 2.5rem;
-   color: #fff;
    font-family: Roboto, "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
    text-transform: uppercase;
    padding-left: 0.5rem;
@@ -69,32 +68,17 @@ a {
    color: #007fff;
 }
 
-section {
-   left: 0%;
-   float: left;
-   /*width: 100vw;
-   height: 100vh;*/
-   /*height: 100vh;*/
+.section {
    overflow-y: visible;
    overflow-x: hidden;
-   color: white;
+   width: 90%;
+   height: 100vh;
+   padding-left: 5%;
+   padding-right: 5%;
    position: absolute;
-   /*display: table-cell;*/
-   /*top: 50vh;*/
-   /*margin-bottom: : auto;*/
-   margin: auto;
-   /*padding-bottom: 3vh;*/
+   top: 0;
+   left: 0;
    text-align: center;
-   /*align-content: center;*/
-   /*vertical-align: middle;*/
-   /*top: 50vh;*/
-   /*transform: translate(0, -50%);*/
-   display: grid;
-   justify-content:center;
-   align-items:center;
-   width:100vw;
-   height:95vh;
-   /*margin-bottom: 5vh*/
 }
 
 .slid-out {
@@ -230,7 +214,7 @@ section {
    font-family: inherit;
    font-size: 1.3rem;
    padding: 0.5rem 1rem;
-   margin: 10em;
+   /*margin: 10rem;*/
    color: #444; /* rgba not supported (IE 8) */
    color: rgba(0, 0, 0, 0.80); /* rgba supported */
    border: 1px solid #999;  /*IE 6/7/8*/
