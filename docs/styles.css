@@ -72,14 +72,14 @@ a {
    overflow-y: visible;
    overflow-x: hidden;
    width: 90%;
-   height: 95%;
+   height: 100%;
    padding-left: 5%;
    padding-right: 5%;
    position: absolute;
    top: 0;
    left: 0;
    text-align: center;
-   margin-bottom: 5%;
+   margin-bottom: 0%;
 }
 
 .slid-out {
@@ -231,6 +231,7 @@ a {
    font-weight: bold;
    box-decoration-break: clone;
    display: inline-block;
+   margin-bottom: 0.5em;
 }
 
 .pure-button-hover,
