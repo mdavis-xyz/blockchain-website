@@ -12,9 +12,9 @@
       <div ${'id="%s"' % section['id'] if 'id' in section else ''} class="${'section slide-in-left' if i == 0 else 'slid-out'}">
           % for el in section['content']:
               % if 'button' in el:
-                 <div class='button-wrap'>
-                    <a href="javascript:slide('${section['id']}','${el['button'][0]['destination']}','${el['button'][0]['direction']}')" class="pure-button">
-                          ${el['button'][0]['text']}
+                 <div class="pure-button">
+                    <a href="javascript:slide('${section['id']}','${el['button'][0]['destination']}','${el['button'][0]['direction']}')"  class="button-inner">
+                       ${el['button'][0]['text']}
                     </a>
                  </div>
               % elif 'p' in el: # TODO: don't hard code all options, just put it in
