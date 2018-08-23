@@ -42,7 +42,7 @@
   content:
      - h1: No, you don't need a blockchain
      - p: Blockchains are like a normal database, but deliberately slow to allow many parties to write without centralised coordination or authority.
-     - p: If only one party will write to to the database, just use a normal database.                     It will be faster, cheaper and greener.
+     - p: If only one party is going to write to the database, just use a normal database.                     It will be faster, cheaper and greener.
 - id: else-write
   content:
      - h2: Who else can write some data?
