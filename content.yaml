@@ -1,4 +1,4 @@
-- id: start
+- id: test
   content:
      - h1: Test page
      - button:
