@@ -325,7 +325,7 @@ a {
 
 .left-arrow {
    font-size: 75%;
-	display: inline-block;
+	display: block;
 	position: absolute;
    left: 1.5em;
    bottom: 1em;
@@ -335,10 +335,11 @@ a {
    padding-bottom: 0.25em;
    padding-left: 0.5em;
    padding-right: 0.5em;
-   height: 1.5em;
+   /*! height: 2em; */
    text-decoration: none;
    color: #000;
-   vertical-align: middle;
+   /*! vertical-align: middle; */
+   /*! margin-bottom: -.25em; */
 }
 
 .left-arrow:after {
@@ -350,9 +351,9 @@ a {
 	/*margin-up: 0.5em;*/
 	width: 0;
 	height: 0;
-	border-top: 1em solid transparent;
-	border-right: 0.75em solid #E6E6E6;
-	border-bottom: 1em solid transparent;
+	border-top: .85em solid transparent;
+	border-right: .75em solid #E6E6E6;
+	border-bottom: .85em solid transparent;
    vertical-align: middle;
 }
 
