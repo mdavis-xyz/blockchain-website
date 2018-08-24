@@ -8,30 +8,15 @@
       <script src="script.js" type="text/javascript"></script>
    </head>
    <body>
-      <div id="test" class="section slide-in-left">
-                 <h1>
-                    Test page
-                 </h1>
-                 <div class="pure-button">
-                    <a href="javascript:slide('test','start','left')"  class="button-inner">
-                       Short text
-                    </a>
-                 </div>
-                 <div class="pure-button">
-                    <a href="javascript:slide('test','start','left')"  class="button-inner">
-                       Long text Long text Long text Long text Long text Long text Long text Long text
-                    </a>
-                 </div>
-      </div>
-      <div id="start" class="slid-out">
+      <div id="start" class="section slide-in-left">
                  <h1>
                     Do you need a blockchain?
                  </h1>
+              <a href="javascript:slide('start','save-data','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('start','save-data','left')"  class="button-inner">
                        Find Out
-                    </a>
                  </div>
+              </a>
                  <p>
                     Written by <a target="_blank" href="https://www.linkedin.com/in/engineerdavis/">Matthew Davis</a>. Inspired by <a target="_blank" href="http://doyouneedablockchain.com/">doyouneedablockchain.com</a> and <a target="_blank" href="https://davidgerard.co.uk/blockchain/2018/02/10/do-you-need-a-blockchain-probably-less-than-wust-and-gervais-think-you-do/">David Gerard's blog</a>.
                  </p>
@@ -40,16 +25,16 @@
                  <h2>
                     Do you need to save data?
                  </h2>
+              <a href="javascript:slide('save-data','no-save-data','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('save-data','no-save-data','up')"  class="button-inner">
                        No
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('save-data','write-data','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('save-data','write-data','left')"  class="button-inner">
                        Yes
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="no-save-data" class="slid-out">
                  <h1>
@@ -66,16 +51,16 @@
                  <h2>
                     Who will write this data?
                  </h2>
+              <a href="javascript:slide('write-data','no-write-data','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('write-data','no-write-data','up')"  class="button-inner">
                        Just my organisation
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('write-data','else-write','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('write-data','else-write','left')"  class="button-inner">
                        Other parties too
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="no-write-data" class="slid-out">
                  <h1>
@@ -92,16 +77,16 @@
                  <h2>
                     Who else can write some data?
                  </h2>
+              <a href="javascript:slide('else-write','some-write','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('else-write','some-write','up')"  class="button-inner">
                        Only Some People
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('else-write','IRL','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('else-write','IRL','left')"  class="button-inner">
                        Literally Anyone
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="some-write" class="slid-out">
                  <h1>
@@ -124,36 +109,36 @@
                  <p>
                     supply chain verification, electricity metering, house ownership ...
                  </p>
+              <a href="javascript:slide('IRL','physical-followup','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('IRL','physical-followup','up')"  class="button-inner">
                        Yes
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('IRL','delete-data-q','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('IRL','delete-data-q','left')"  class="button-inner">
                        No
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="physical-followup" class="slid-out">
                  <h2>
                     How do the miners writing to the blockchain know what's happening in reality?
                  </h2>
+              <a href="javascript:slide('physical-followup','some-write','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('physical-followup','some-write','up')"  class="button-inner">
                        Only approved parties may save data
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('physical-followup','physical-vetting','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('physical-followup','physical-vetting','up')"  class="button-inner">
                        We'll vet all write requests to the blockchain
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('physical-followup','physical-maths','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('physical-followup','physical-maths','left')"  class="button-inner">
                        Maths doesn't lie, blockchains are cryptographically secure
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="physical-vetting" class="slid-out">
                  <h1>
@@ -176,21 +161,21 @@
                  <p>
                     So if your blockchain says <a target="_blank" href="https://shkspr.mobi/blog/2018/06/how-i-became-leonardo-da-vinci-on-the-blockchain/">some random Twitter user painted the Mona Lisa</a>, then what?
                  </p>
+              <a href="javascript:slide('physical-maths','physical-vetting','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('physical-maths','physical-vetting','up')"  class="button-inner">
                        That wouldn't happen. All writes will be verified.
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('physical-maths','physical-edit','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('physical-maths','physical-edit','up')"  class="button-inner">
                        We'll just correct that
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('physical-maths','delete-data-q','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('physical-maths','delete-data-q','left')"  class="button-inner">
                        It's in the blockchain, so it must be true
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="physical-edit" class="slid-out">
                  <h1>
@@ -213,16 +198,16 @@
                  <p>
                     For example, the new GDPR laws mandate that under certain circumstances you must delete data when customers ask
                  </p>
+              <a href="javascript:slide('delete-data-q','delete-data-a','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('delete-data-q','delete-data-a','up')"  class="button-inner">
                        Sometimes
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('delete-data-q','blunders-q','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('delete-data-q','blunders-q','left')"  class="button-inner">
                        Never
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="delete-data-a" class="slid-out">
                  <h1>
@@ -245,16 +230,16 @@
                  <p>
                     What will you do if incorrect data is written to the ledger?
                  </p>
+              <a href="javascript:slide('blunders-q','delete-data-a','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('blunders-q','delete-data-a','up')"  class="button-inner">
                        Fix It
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('blunders-q','illegal-content','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('blunders-q','illegal-content','left')"  class="button-inner">
                        Leave It
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="illegal-content" class="slid-out">
                  <h2>
@@ -266,21 +251,21 @@
                  <p>
                     (That <a target="_blank" href="https://fc18.ifca.ai/preproceedings/6.pdf">literally happened</a> to the Bitcoin blockchain.)
                  </p>
+              <a href="javascript:slide('illegal-content','delete-illegal-content','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('illegal-content','delete-illegal-content','up')"  class="button-inner">
                        Delete It
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('illegal-content','leave-illegal-content','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('illegal-content','leave-illegal-content','left')"  class="button-inner">
                        Leave It There
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('illegal-content','some-write','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('illegal-content','some-write','up')"  class="button-inner">
                        Won't happen. Only nice people will be allowed to write to the blockchain
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="delete-illegal-content" class="slid-out">
                  <h1>
@@ -303,31 +288,31 @@
                  <p>
                     This means that you and anyone else using your database will be violating the law (if such content is uploaded).
                  </p>
+              <a href="javascript:slide('leave-illegal-content','delete-illegal-content','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('leave-illegal-content','delete-illegal-content','up')"  class="button-inner">
                        No, I don't want that
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('leave-illegal-content','who-read','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('leave-illegal-content','who-read','left')"  class="button-inner">
                        Yes, that's fine
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="who-read" class="slid-out">
                  <h2>
                     Who should be able to read this data?
                  </h2>
+              <a href="javascript:slide('who-read','some-read','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('who-read','some-read','up')"  class="button-inner">
                        Only some parties
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('who-read','country','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('who-read','country','left')"  class="button-inner">
                        Literally Anyone
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="some-read" class="slid-out">
                  <h1>
@@ -350,16 +335,16 @@
                  <p>
                     Do you need to comply to data sovereignty laws?
                  </p>
+              <a href="javascript:slide('country','geoblocking','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('country','geoblocking','up')"  class="button-inner">
                        Yes
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('country','cost','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('country','cost','left')"  class="button-inner">
                        No
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="geoblocking" class="slid-out">
                  <h1>
@@ -379,16 +364,16 @@
                  <h2>
                     Is financial cost important?
                  </h2>
+              <a href="javascript:slide('cost','cost-warning','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('cost','cost-warning','up')"  class="button-inner">
                        Yes
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('cost','write-speed','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('cost','write-speed','left')"  class="button-inner">
                        No
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="cost-warning" class="slid-out">
                  <h2>
@@ -397,26 +382,26 @@
                  <p>
                     Blockchains require many expensive computers burn a huge amount of energy playing <a target="_blank" href="https://youtu.be/ZH-cXBhkl-E?t=21s">Number Wang</a>, to decide who gets to write to the database. So blockchains are expensive to run. Also, buzzword consultants charge high fees.
                  </p>
+              <a href="javascript:slide('cost-warning','write-speed','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('cost-warning','write-speed','left')"  class="button-inner">
                        I'm willing to pay more
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="write-speed" class="slid-out">
                  <h2>
                     How many writes do you need to deal with?
                  </h2>
+              <a href="javascript:slide('write-speed','too-slow','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('write-speed','too-slow','up')"  class="button-inner">
                        More than 3 per second
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('write-speed','emissions-q','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('write-speed','emissions-q','left')"  class="button-inner">
                        Less than 3 per second
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="too-slow" class="slid-out">
                  <h1>
@@ -439,16 +424,16 @@
                  <h2>
                     Is reducing greenhouse gas emissions important?
                  </h2>
+              <a href="javascript:slide('emissions-q','emissions-a','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('emissions-q','emissions-a','up')"  class="button-inner">
                        Yes
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('emissions-q','merkle','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('emissions-q','merkle','left')"  class="button-inner">
                        No
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="emissions-a" class="slid-out">
                  <h1>
@@ -463,26 +448,26 @@
                  <p>
                     Other types of blockchains have been proposed, which use <i>Proof-of-Stake</i> or <i>Proof-of-Storage</i> instead of <i>Proof-of-Work</i>. These are largely <a target="_blank" href="https://en.wikipedia.org/wiki/Vaporware">vapourware</a>.
                  </p>
+              <a href="javascript:slide('emissions-a','merkle','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('emissions-a','merkle','left')"  class="button-inner">
                        Screw the environment, I want a blockchain!
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="merkle" class="slid-out">
                  <h2>
                     Do you want a cryptographically secure, append-only, hash-based Merkle Tree database?
                  </h2>
+              <a href="javascript:slide('merkle','no-merkle','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('merkle','no-merkle','up')"  class="button-inner">
                        No
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('merkle','git-q','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('merkle','git-q','left')"  class="button-inner">
                        Yes
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="no-merkle" class="slid-out">
                  <h1>
@@ -505,16 +490,16 @@
                  <p>
                     If you want, you can use <a target="_blank" href="https://help.github.com/articles/signing-commits-using-gpg/">cryptographic signatures</a> to verify writes to the files.
                  </p>
+              <a href="javascript:slide('git-q','cryptocurrency','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('git-q','cryptocurrency','left')"  class="button-inner">
                        No
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('git-q','git-a','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('git-q','git-a','up')"  class="button-inner">
                        Yes
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="git-a" class="slid-out">
                  <h1>
@@ -534,16 +519,16 @@
                  <h2>
                     Are you making a new cryptocurrency?
                  </h2>
+              <a href="javascript:slide('cryptocurrency','maybe-blockchain','left')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('cryptocurrency','maybe-blockchain','left')"  class="button-inner">
                        No
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('cryptocurrency','new-coin','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('cryptocurrency','new-coin','up')"  class="button-inner">
                        Yes
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="new-coin" class="slid-out">
                  <h2>
@@ -552,16 +537,16 @@
                  <p>
                     Is this fundementally different to the hundreds which already exist?
                  </p>
+              <a href="javascript:slide('new-coin','stupid-coin','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('new-coin','stupid-coin','up')"  class="button-inner">
                        It's for a different demographic or use-case
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('new-coin','reasonable-coin','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('new-coin','reasonable-coin','up')"  class="button-inner">
                        The code-base is substantially different
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="stupid-coin" class="slid-out">
                  <h1>
@@ -592,16 +577,16 @@
                  <p>
                     For example, <a target="_blank" href="https://blockchain-dns.info/">censorship-proof domain ownership and DNS</a>, or <a target="_blank" href="https://twitter.com/wikileaks/status/80774521350668288">a way to donate to Wikileaks</a>?
                  </p>
+              <a href="javascript:slide('maybe-blockchain','yes-blockchain','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('maybe-blockchain','yes-blockchain','up')"  class="button-inner">
                        Yes
-                    </a>
                  </div>
+              </a>
+              <a href="javascript:slide('maybe-blockchain','end-no','up')"  class="button-inner">
                  <div class="pure-button">
-                    <a href="javascript:slide('maybe-blockchain','end-no','up')"  class="button-inner">
                        No, I'm not trying to defy governments or laws
-                    </a>
                  </div>
+              </a>
       </div>
       <div id="end-no" class="slid-out">
                  <h1>
