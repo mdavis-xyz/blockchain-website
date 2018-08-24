@@ -212,7 +212,11 @@ a {
 }
 
 .button-inner {
-   color: #444
+   color: #444;
+   display: inline-block;
+   background-color: wheat;
+   margin: 12px;
+   /*! min-width:  10%; */
 }
 
 .pure-button {
