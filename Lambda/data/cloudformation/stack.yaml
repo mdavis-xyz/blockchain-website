@@ -9,9 +9,12 @@ Parameters:
       codebucket:
           Type: String
           Description: S3 bucket where lambda code should be saved
-      loggerS3Version:
+      frontS3Version:
           Type: String
-          Description: Version of the zip for logger
+          Description: Version of the zip for front
+      backS3Version:
+          Type: String
+          Description: Version of the zip for back
       errorHandlerS3Version:
           Type: String
           Description: Version of the zip for errorHandler
@@ -112,14 +115,14 @@ Resources:
                          WriteCapacityUnits: 5
 
 
-      logger:
+      front:
           Type: AWS::Lambda::Function
           Properties:
             #FunctionName: !Join [ "-", [ !Ref "botname", "checkForNew"] ]
             Code:
               S3Bucket: !Ref "codebucket"
-              S3Key: !Join [ "/", [ !Ref "stage", "logger.zip"] ]
-              S3ObjectVersion: !Ref "loggerS3Version"
+              S3Key: !Join [ "/", [ !Ref "stage", "front.zip"] ]
+              S3ObjectVersion: !Ref "frontS3Version"
             Handler: main.lambda_handler
             Runtime: python3.6
             Timeout: 30
@@ -132,12 +135,12 @@ Resources:
                    errorHandlerArn:
                        Fn::GetAtt: ["errorHandler", "Arn"]
 
-      errorAlarmLoggerNew:
+      errorAlarmFrontNew:
          Type: "AWS::CloudWatch::Alarm"
          Properties:
            ActionsEnabled: True # not sure
            AlarmDescription:
-               "Function logger failed. Unable to increment view count"
+               "Function front failed. Unable to send message to bus"
            AlarmActions:
                - Ref: "unfilteredErrorTopic"
            ComparisonOperator: "GreaterThanOrEqualToThreshold"
@@ -147,17 +150,17 @@ Resources:
            Dimensions:
                - Name: "FunctionName"
                  Value:
-                     Ref: "logger"
+                     Ref: "front"
            Period: 60 # minimum
            Statistic: Sum
            Threshold: 1
            TreatMissingData: "notBreaching"
 
-      permittriggerlambda:
+      permittriggerFront:
           Type: "AWS::Lambda::Permission"
           Properties:
              FunctionName:
-                Ref: "logger"
+                Ref: "front"
              Action: "lambda:InvokeFunction"
              Principal: "apigateway.amazonaws.com"
 
@@ -235,7 +238,7 @@ Resources:
                  "Fn::GetAtt": ["restapi", "RootResourceId"]
             PathPart: "increment"
       loggerany:
-         DependsOn: "permittriggerlambda"
+         DependsOn: "permittriggerFront"
          Type: "AWS::ApiGateway::Method"
          Properties:
             RestApiId:
@@ -253,11 +256,62 @@ Resources:
                                     "arn:aws:apigateway:",
                                     "Ref": "AWS::Region",
                                     ":lambda:path/2015-03-31/functions/",
-                                    "Fn::GetAtt": ["logger", "Arn"],
+                                    "Fn::GetAtt": ["front", "Arn"],
                                     "/invocations"
                                  ]
                                ]
 
+
+
+
+      back:
+          Type: AWS::Lambda::Function
+          Properties:
+            #FunctionName: !Join [ "-", [ !Ref "botname", "checkForNew"] ]
+            Code:
+              S3Bucket: !Ref "codebucket"
+              S3Key: !Join [ "/", [ !Ref "stage", "back.zip"] ]
+              S3ObjectVersion: !Ref "backS3Version"
+            Handler: main.lambda_handler
+            Runtime: python3.6
+            Timeout: 30
+            Role:
+                "Fn::GetAtt": ["ExecutionRole", "Arn"]
+            Environment:
+                Variables:
+                   viewHistoryTable:
+                       Ref: "viewHistoryTable"
+                   errorHandlerArn:
+                       Fn::GetAtt: ["errorHandler", "Arn"]
+
+      errorAlarmBackNew:
+         Type: "AWS::CloudWatch::Alarm"
+         Properties:
+           ActionsEnabled: True # not sure
+           AlarmDescription:
+               "Function back failed. Unable to read bus and increment db"
+           AlarmActions:
+               - Ref: "unfilteredErrorTopic"
+           ComparisonOperator: "GreaterThanOrEqualToThreshold"
+           EvaluationPeriods: 1
+           MetricName: "Errors"
+           Namespace: "AWS/Lambda"
+           Dimensions:
+               - Name: "FunctionName"
+                 Value:
+                     Ref: "back"
+           Period: 60 # minimum
+           Statistic: Sum
+           Threshold: 1
+           TreatMissingData: "notBreaching"
+
+      permittriggerBack:
+          Type: "AWS::Lambda::Permission"
+          Properties:
+             FunctionName:
+                Ref: "back"
+             Action: "lambda:InvokeFunction"
+             Principal: "sns.amazonaws.com"
 
 
       #######################
