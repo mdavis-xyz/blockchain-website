@@ -7,7 +7,7 @@ var currentElID = null; // won't be used until we navigate anyway
 function slide(oldElID,newElID,direction){
    slideNoHist(oldElID,newElID,direction);
    if(navHistory.length == 0) {
-      document.getElementById("back-button").setAttribute('class', 'left-arrow slide-in-button'); // not hidden
+      document.getElementById("back-button").setAttribute('class', 'button-back slide-in-button'); // not hidden
    }
    navHistory.push(oldElID);
    navDirections.push(direction);
@@ -54,6 +54,6 @@ function back(){
       if (backButton == null){
          backButton = document.getElementById('back-button');
       }
-      backButton.setAttribute('class', 'left-arrow slide-out-button');
+      backButton.setAttribute('class', 'button-back slide-out-button');
    }
 }
