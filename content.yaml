@@ -183,7 +183,7 @@
   content:
      - h2: Illegal Content
      - p: What do you do when a malicious party uploads hate speech, child porn, terrorist propaganda or other illegal materials to the database?
-     - p: (That <a target="_blank" href="https://fc18.ifca.ai/preproceedings/6.pdf">literally happened</a> to the Bitcoin blockchain, and also <a target="_black" href="https://www.coindesk.com/the-first-augur-assassination-markets-have-arrived/">to Ethereum</a>.)
+     - p: (That <a target="_blank" href="https://fc18.ifca.ai/preproceedings/6.pdf">literally happened</a> to the Bitcoin blockchain, and also <a target="_blank" href="https://www.coindesk.com/the-first-augur-assassination-markets-have-arrived/">to Ethereum</a>.)
      - button:
         - text: Delete It
           destination: delete-illegal-content
