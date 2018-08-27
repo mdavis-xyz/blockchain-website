@@ -15,6 +15,7 @@ import traceback as tb
 html_fname = 'response.html'
 with open(html_fname,'r') as f:
     html = f.read()
+    assert(type(html) == type(''))
 
 def unit_tests():
     print('No unit tests to run')
@@ -44,7 +45,16 @@ def main(logger,event):
         timestamp = int(time.time())
         logger.warn("could't find requestTimeEpoch. Using %d instead" % timestamp)
 
-    if 'websiteName' not in event:
+    logger.info("Keys to event: %s" % str([x for x in event]))
+    for x in ['pathParameters','queryStringParameters']:
+        try:
+           logger.info("Keys to event['%s']: %s" % (x,str([x for x in event[x]])))
+        except:
+           logger.info("Can't find " + x)
+    try:
+        websiteName =  event['queryStringParameters']['websiteName']
+    except (KeyError,TypeError):    
+        logger.error("Can't find websiteName")
         response = {
           'statusCode': 400  ,
           'headers' : {
@@ -55,10 +65,10 @@ def main(logger,event):
         }
         return(response)
 
-    sendMessage(event['websiteName'])
+    sendMessage(logger,websiteName)
 
     response = {
-      'statusCode': 200  ,
+      'statusCode': 200,
       'headers' : {
          "Access-Control-Allow-Origin": "*",
          "Content-Type": "text/html"
@@ -68,5 +78,5 @@ def main(logger,event):
 
     return(response)
 
-def sendMessage(websiteName):
+def sendMessage(logger,websiteName):
     logger.warn("Not actually sending message. TODO")

@@ -168,8 +168,8 @@ Resources:
       restapi:
          Type: "AWS::ApiGateway::RestApi"
          Properties:
-             Name: blockchainviewcounter
-             Description: "For incrementing the count of views to my blockchain website"
+             Name: viewcounter
+             Description: "For incrementing the count of views to my websites"
       apistage:
          DependsOn:
                   - "ApiGatewayAccount"
@@ -226,9 +226,9 @@ Resources:
              StageDescription:
                  CachingEnabled: false
                  DataTraceEnabled: true
-                 Description: "Serve market data, test stage"
+                 Description: "front end for view counter"
                  LoggingLevel: INFO
-             StageName: dummy
+             StageName: !Ref "frontS3Version"
       loggerresource:
          Type: "AWS::ApiGateway::Resource"
          Properties:

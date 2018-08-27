@@ -21,8 +21,8 @@ virtualenv -p /usr/bin/python3.6 ./env
 # pip install nose
 pip install -r requirements.txt
 
-rm -rf include
-mkdir include
+#rm -rf include
+mkdir include -p
 for DEP in errors.py
 do
     cp $1/util/$DEP include/$DEP
