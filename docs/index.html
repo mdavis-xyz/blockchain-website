@@ -26,7 +26,7 @@
               <a href="javascript:slide('save-data','no-save-data','up')"  class="button">
                        No
               </a>
-              <a href="javascript:slide('save-data','write-data','left')"  class="button">
+              <a href="javascript:slide('save-data','physical-q','left')"  class="button">
                        Yes
               </a>
       </div>
@@ -41,64 +41,17 @@
                     Databases are for saving data.
                  </p>
       </div>
-      <div id="write-data" class="slid-out">
-                 <h2>
-                    Who will write this data?
-                 </h2>
-              <a href="javascript:slide('write-data','no-write-data','up')"  class="button">
-                       Just my organisation
-              </a>
-              <a href="javascript:slide('write-data','else-write','left')"  class="button">
-                       Other parties too
-              </a>
-      </div>
-      <div id="no-write-data" class="slid-out">
-                 <h1>
-                    No, you don't need a blockchain
-                 </h1>
-                 <p>
-                    Blockchains are like a normal database, but deliberately slow to allow many parties to write without centralised coordination or authority.
-                 </p>
-                 <p>
-                    If only one party is going to write to the database, just use a normal database.                     It will be faster, cheaper and greener.
-                 </p>
-      </div>
-      <div id="else-write" class="slid-out">
-                 <h2>
-                    Who else can write some data?
-                 </h2>
-              <a href="javascript:slide('else-write','some-write','up')"  class="button">
-                       Only Some People
-              </a>
-              <a href="javascript:slide('else-write','IRL','left')"  class="button">
-                       Literally Anyone
-              </a>
-      </div>
-      <div id="some-write" class="slid-out">
-                 <h1>
-                    No, you don't need a blockchain
-                 </h1>
-                 <p>
-                    You're only allowing trusted parties to write to the database. So you'll need an authority who approves or denies parties wanting to write to the database.
-                 </p>
-                 <p>
-                    The reason blockchains were invented was to ensure that no one has the authority to deny anyone write access to the database.
-                 </p>
-                 <p>
-                    Just use a normal database. It will be faster, cheaper and greener.
-                 </p>
-      </div>
-      <div id="IRL" class="slid-out">
+      <div id="physical-q" class="slid-out">
                  <h2>
                     Is the data about verifying or tracking physical things?
                  </h2>
                  <p>
                     supply chain verification, electricity metering, house ownership ...
                  </p>
-              <a href="javascript:slide('IRL','physical-followup','up')"  class="button">
+              <a href="javascript:slide('physical-q','physical-followup','up')"  class="button">
                        Yes
               </a>
-              <a href="javascript:slide('IRL','delete-data-q','left')"  class="button">
+              <a href="javascript:slide('physical-q','write-data','left')"  class="button">
                        No
               </a>
       </div>
@@ -143,7 +96,7 @@
               <a href="javascript:slide('physical-maths','physical-edit','up')"  class="button">
                        We'll just correct that
               </a>
-              <a href="javascript:slide('physical-maths','delete-data-q','left')"  class="button">
+              <a href="javascript:slide('physical-maths','write-data','left')"  class="button">
                        It's in the blockchain, so it must be true
               </a>
       </div>
@@ -158,7 +111,54 @@
                     Editable blockchains are like infrared coloured fireworks. They're straightforward to build, but there's no point creating such a thing.
                  </p>
                  <p>
-                    Just use a normal database. That way other parties can't make it illegal to store or transmit your own database.
+                    Just use a normal database. It will be faster, cheaper and greener.
+                 </p>
+      </div>
+      <div id="write-data" class="slid-out">
+                 <h2>
+                    Who will write this data?
+                 </h2>
+              <a href="javascript:slide('write-data','no-write-data','up')"  class="button">
+                       Just my organisation
+              </a>
+              <a href="javascript:slide('write-data','else-write','left')"  class="button">
+                       Other parties too
+              </a>
+      </div>
+      <div id="no-write-data" class="slid-out">
+                 <h1>
+                    No, you don't need a blockchain
+                 </h1>
+                 <p>
+                    Blockchains are like a normal database, but deliberately slow to allow many parties to write without centralised coordination or authority.
+                 </p>
+                 <p>
+                    If only one party is going to write to the database, just use a normal database. It will be faster, cheaper and greener.
+                 </p>
+      </div>
+      <div id="else-write" class="slid-out">
+                 <h2>
+                    Who else can write some data?
+                 </h2>
+              <a href="javascript:slide('else-write','some-write','up')"  class="button">
+                       Only Some People
+              </a>
+              <a href="javascript:slide('else-write','delete-data-q','left')"  class="button">
+                       Literally Anyone
+              </a>
+      </div>
+      <div id="some-write" class="slid-out">
+                 <h1>
+                    No, you don't need a blockchain
+                 </h1>
+                 <p>
+                    You're only allowing trusted parties to write to the database. So you'll need an authority who approves or denies parties wanting to write to the database.
+                 </p>
+                 <p>
+                    The reason blockchains were invented was to ensure that no one has the authority to deny anyone write access to the database.
+                 </p>
+                 <p>
+                    Just use a normal database. It will be faster, cheaper and greener.
                  </p>
       </div>
       <div id="delete-data-q" class="slid-out">
@@ -183,7 +183,7 @@
                     The reason blockchains were invented was to make an immutable, append-only database. If you use a blockchain you <a target="_blank" href="https://davidgerard.co.uk/blockchain/2018/06/11/yougov-directs-gdpr-compliant-blockchain-gdpr-laundering-as-a-service/">cannot delete data in it</a>.
                  </p>
                  <p>
-                    Editable blockchains are like infrared coloured fireworks.                     They're straightforward to build, but there's no point creating such a thing.
+                    Editable blockchains are like infrared coloured fireworks. They're straightforward to build, but there's no point creating such a thing.
                  </p>
                  <p>
                     Just use a normal database. You'll be able to comply with privacy laws that way.
@@ -196,12 +196,40 @@
                  <p>
                     What will you do if incorrect data is written to the ledger?
                  </p>
-              <a href="javascript:slide('blunders-q','delete-data-a','up')"  class="button">
+              <a href="javascript:slide('blunders-q','blunders-who','left')"  class="button">
                        Fix It
               </a>
               <a href="javascript:slide('blunders-q','illegal-content','left')"  class="button">
                        Leave It
               </a>
+      </div>
+      <div id="blunders-who" class="slid-out">
+                 <h2>
+                    Who will fix it?
+                 </h2>
+              <a href="javascript:slide('blunders-who','delete-data-a','up')"  class="button">
+                       My organisation will have manual overwite privileges
+              </a>
+              <a href="javascript:slide('blunders-who','blunders-soft','up')"  class="button">
+                       We'll ask everyone to soft fork each time
+              </a>
+      </div>
+      <div id="blunders-soft" class="slid-out">
+                 <h1>
+                    No, you don't need a blockchain
+                 </h1>
+                 <p>
+                    The reason blockchains were invented was to create an <i>immutable</i> database. This means that data written to it cannot be deleted.
+                 </p>
+                 <p>
+                    None
+                 </p>
+                 <p>
+                    The only way you can modify a blockchain is to convince everyone using it to instead use a new ammended copy, and ignore the old copy. This is called a <a target="_blank" href="https://davidgerard.co.uk/blockchain/the-dao/">soft fork</a>. This requires a lot of effort, and involves convincing a large community (who are not all trustworthy) to throw away the cherised immutability property of blockchains.
+                 </p>
+                 <p>
+                    The unique value proposition of blockchains is that they are immutable. If you want to overwrite data then you do not want immutability. So just use a normal database.
+                 </p>
       </div>
       <div id="illegal-content" class="slid-out">
                  <h2>
@@ -211,7 +239,7 @@
                     What do you do when a malicious party uploads hate speech, child porn, terrorist propaganda or other illegal materials to the database?
                  </p>
                  <p>
-                    (That <a target="_blank" href="https://fc18.ifca.ai/preproceedings/6.pdf">literally happened</a> to the Bitcoin blockchain.)
+                    (That <a target="_blank" href="https://fc18.ifca.ai/preproceedings/6.pdf">literally happened</a> to the Bitcoin blockchain, and also <a target="_black" href="https://www.coindesk.com/the-first-augur-assassination-markets-have-arrived/">to Ethereum</a>.)
                  </p>
               <a href="javascript:slide('illegal-content','delete-illegal-content','up')"  class="button">
                        Delete It
@@ -317,10 +345,10 @@
       </div>
       <div id="cost-warning" class="slid-out">
                  <h2>
-                    You probably don't want a blockchain
+                    No, you probably don't want a blockchain
                  </h2>
                  <p>
-                    Blockchains require many expensive computers burn a huge amount of energy playing <a target="_blank" href="https://youtu.be/ZH-cXBhkl-E?t=21s">Number Wang</a>, to decide who gets to write to the database. So blockchains are expensive to run. Also, buzzword consultants charge high fees.
+                    Blockchains require many expensive computers, which burn a huge amount of energy playing <a target="_blank" href="https://youtu.be/ZH-cXBhkl-E?t=21s">Number Wang</a>, to decide who gets to write to the database. So blockchains are expensive to run. Also, buzzword consultants charge high fees.
                  </p>
               <a href="javascript:slide('cost-warning','write-speed','left')"  class="button">
                        I'm willing to pay more
@@ -367,7 +395,7 @@
       </div>
       <div id="emissions-a" class="slid-out">
                  <h1>
-                    You don't want a blockchain
+                    No, you don't want a blockchain
                  </h1>
                  <p>
                     There's a law in mathematics that says you can't have truly distributed databases, without central orchestration.
@@ -429,7 +457,7 @@
                     Just use git.
                  </h1>
                  <p>
-                    Git repos are like blockchains. The main differences is that they don't emit more pollution than whole countries.
+                    Git repos are like blockchains. The main difference is that they don't emit more pollution than whole countries.
                  </p>
                  <p>
                     Also, git is an established, well proven technology which most developers already have the skills to use. Whereas blockchain projects are largely vapourware, with eye-watering consultancy price tags.
@@ -442,7 +470,7 @@
               <a href="javascript:slide('cryptocurrency','maybe-blockchain','left')"  class="button">
                        No
               </a>
-              <a href="javascript:slide('cryptocurrency','new-coin','up')"  class="button">
+              <a href="javascript:slide('cryptocurrency','new-coin','left')"  class="button">
                        Yes
               </a>
       </div>
@@ -465,7 +493,7 @@
                     No, you don't need a blockchain
                  </h1>
                  <p>
-                    Yes, blockchains are usefull for creating cryptocurrencies. However you shouldn't be making yet another shit-coin.
+                    Yes, blockchains are usefull for creating cryptocurrencies. However you shouldn't be making yet another <a target="_blank" href="https://www.urbandictionary.com/define.php?term=Shitcoin">shit-coin</a>.
                  </p>
       </div>
       <div id="reasonable-coin" class="slid-out">
@@ -473,13 +501,13 @@
                     Yes, you do need a blockchain
                  </h1>
                  <p>
-                    Cryptocurrencies are one of the few use-cases where blockchains are the best-available choice.
+                    Cryptocurrencies are one of the few use-cases where blockchains are the best-available choice. However, does the world really need a new cryptocurrency?
                  </p>
                  <p>
-                    Make sure your coin is uniquely usefull.
+                    Make sure your coin is uniquely usefull. Also, be carefull. The world of cryptocurrencies is not very kind to those who write <a target="_blank" href="https://davidgerard.co.uk/blockchain/ethereum-smart-contracts-in-practice/">buggy code</a> or have consumer-grade security <sup><a target="_blank" href="https://twitter.com/lopp/status/1015586077850177536?s=21">[1]</a><a target="_blank" href="https://www.reddit.com/r/btc/comments/7ofrqf/warning_brutal_scam_guy_buys_a_ledger_nano_wallet/">[2]</a><a target="_blank" href="https://www.reddit.com/r/legaladvice/comments/8dxyb8/i_bought_112_bitcoin_in_2013_friend_that_sold/">[3]</a><a target="_blank" href="https://www.reddit.com/r/CryptoCurrency/comments/8pcxi3/neon_wallet_hacked_150200k_anything_i_can_do/">[4]</a><a target="_blank" href="https://www.reddit.com/r/Bitcoin/comments/81yyxh/lost_bitcoin_lost_my_diary_that_stored_my_back_up/">[5]</a><a target="_blank" href="https://www.reddit.com/r/CryptoCurrency/comments/8dnbeh/coins_gone_hope_you_learn_from_my_mistake/">[6]</a><a target="_blank" href="https://www.reddit.com/r/Monero/comments/7lb7rm/be_your_own_bank_a_cautionary_tale/">[7]</a></sup>.
                  </p>
                  <p>
-                    Be carefull though, the world of cryptocurrencies is not very kind to those who write <a target="_blank" href="https://davidgerard.co.uk/blockchain/ethereum-smart-contracts-in-practice/">buggy code</a> or have consumer-grade security <sup><a target="_blank" href="https://twitter.com/lopp/status/1015586077850177536?s=21">[1]</a><a target="_blank" href="https://www.reddit.com/r/btc/comments/7ofrqf/warning_brutal_scam_guy_buys_a_ledger_nano_wallet/">[2]</a><a target="_blank" href="https://www.reddit.com/r/legaladvice/comments/8dxyb8/i_bought_112_bitcoin_in_2013_friend_that_sold/">[3]</a><a target="_blank" href="https://www.reddit.com/r/CryptoCurrency/comments/8pcxi3/neon_wallet_hacked_150200k_anything_i_can_do/">[4]</a><a target="_blank" href="https://www.reddit.com/r/Bitcoin/comments/81yyxh/lost_bitcoin_lost_my_diary_that_stored_my_back_up/">[5]</a><a target="_blank" href="https://www.reddit.com/r/CryptoCurrency/comments/8dnbeh/coins_gone_hope_you_learn_from_my_mistake/">[6]</a><a target="_blank" href="https://www.reddit.com/r/Monero/comments/7lb7rm/be_your_own_bank_a_cautionary_tale/">[7]</a></sup>.
+                    I hope the <a target="_blank" href="https://www.cell.com/joule/fulltext/S2542-4351(18)30177-6">emissions</a>, <a target="_blank" href="https://www.blockchain.com/charts/cost-per-transaction?popcorn=extrabuttery">cost</a>, <a target="_blank" href="https://www.blockchain.com/charts/transactions-per-second?timespan=30days">low performance</a>, <a target="_blank" href="https://fc18.ifca.ai/preproceedings/6.pdf">legal risk</a> and <a target="_blank" href="https://www.coindesk.com/the-first-augur-assassination-markets-have-arrived/">ethical costs</a> are worth it.
                  </p>
       </div>
       <div id="maybe-blockchain" class="slid-out">
