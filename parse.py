@@ -35,6 +35,11 @@ def validate(content):
         for els in slide['content']:
             assert(len(els) == 1)
             assert([k for k in els.keys()][0] in ['h1','h2','p','button'])
+            for k in els:
+                if not els[k]:
+                    print("error, empty %s element in slide %s" % (k,slide['id']))
+                    exit(1)
+            assert(all([els[k] for k in els.keys()][0])) # no blanks
             if 'button' in els:
                 el = els['button'][0]
                 # pp.pprint(el)

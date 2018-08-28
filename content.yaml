@@ -182,7 +182,6 @@
   content:
      - h1: No, you don't need a blockchain
      - p: The reason blockchains were invented was to create an <i>immutable</i> database. This means that data written to it cannot be deleted.
-     - p:
      - p: The only way you can modify a blockchain is to convince everyone using it to instead use a new ammended copy, and ignore the old copy. This is called a <a target="_blank" href="https://davidgerard.co.uk/blockchain/the-dao/">soft fork</a>. This requires a lot of effort, and involves convincing a large community (who are not all trustworthy) to throw away the cherised immutability property of blockchains.
      - p: The unique value proposition of blockchains is that they are immutable. If you want to overwrite data then you do not want immutability. So just use a normal database.
 - id: illegal-content
