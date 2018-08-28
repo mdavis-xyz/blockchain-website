@@ -163,8 +163,8 @@
   content:
      - h2: Who will fix it?
      - button:
-        - text: My organisation will have manual overwite privileges
-          destination: delete-data-a
+        - text: My organisation will have manual overwrite privileges
+          destination: blunders-org
           destination-type: absolute
           direction: up
      - button:
@@ -172,6 +172,12 @@
           destination: blunders-soft
           destination-type: absolute
           direction: up
+- id: blunders-org
+  content:
+     - h1: No, you don't need a blockchain
+     - p: Blockchains are like a normal database, but deliberately slow to allow many parties to write without a central authority.
+     - p: If one party has the power to overwrite other data then you have a centralised authority. So there's no point using a blockchain.
+     - p: Just use a normal database. It will be faster, cheaper and greener.
 - id: blunders-soft
   content:
      - h1: No, you don't need a blockchain
