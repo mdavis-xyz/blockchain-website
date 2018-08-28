@@ -2,9 +2,86 @@ import yaml
 import pprint as pp
 from mako.template import Template
 from tidylib import tidy_document
+import re
 
 # pyyaml converts "yes" and "no" to "True" and "False". I don't want that.
 from yaml.constructor import Constructor
+
+def loadDictionaries():
+    dictionaryFileNames = [
+       '/usr/share/dict/american-english',
+       '/usr/share/dict/british-english',
+       'custom-words.txt']
+    words = []
+    for fname in dictionaryFileNames:
+        with open(fname,'r') as fp:
+            words += [w.strip() for w in fp if w.strip() != '']
+    return(set(words))
+
+dictionary = loadDictionaries()
+
+def addToDictionary(word):
+    fname = 'custom-words.txt'
+    with open(fname,'a') as fp:
+        fp.write("\n" + word)
+    dictionary.add(word)
+
+regexExpr = re.compile(r"<[^<>]*>")
+
+def spellcheckElement(el):
+    # get rid of <> tags
+    content = regexExpr.sub("",el.replace('\n',' '))
+
+    words = [w.strip().rstrip(').,!?').lstrip('(') for w in content.split(' ')]
+    words = [w for w in words if w != '']
+
+    for w in words:
+        if (not w in dictionary) and \
+           (not isNumber(w.replace(',',"").lstrip('$').rstrip('%'))):
+            # try with uncapitalised first letter
+            if len(w) > 1:
+                wLower = w[0].lower() + w[1:]
+            else:
+                wLower = w.lower()
+            if not wLower in dictionary:
+                print('unknown word')
+                ret = input('%s is not in the dictionary, add it? (y/n/c for uncapitalise)\n' % (w))
+                if ret.lower() in ['y','yes','']:
+                    addToDictionary(w)
+                elif ret.lower() in ['c']:
+                    print('adding %s to dictionary' % wLower)
+                    addToDictionary(wLower)
+                else:
+                    return(False)
+    return(True)
+
+
+def spellcheckElementTest():
+    # test this regex does what I think
+    testIn = "abc<b>123</b> ecd"
+    expectedOut = "abc123 ecd"
+    actualOut = regexExpr.sub('',testIn)
+    if actualOut != expectedOut:
+        print("actual out: %s" % actualOut)
+        print("expected out: %s" % expectedOut)
+    assert(actualOut == expectedOut)
+
+
+def isNumber(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        pass
+
+    try:
+        import unicodedata
+        unicodedata.numeric(s)
+        return True
+    except (TypeError, ValueError):
+        pass
+
+    return False
 
 def add_bool(self, node):
     return self.construct_scalar(node)
@@ -32,29 +109,42 @@ def validate(content):
     allIDs = set([x['id'] for x in content if 'id' in x])
     for (i,slide) in enumerate(content):
         assert('id' in slide)
-        for els in slide['content']:
-            assert(len(els) == 1)
-            assert([k for k in els.keys()][0] in ['h1','h2','p','button'])
-            for k in els:
-                if not els[k]:
-                    print("error, empty %s element in slide %s" % (k,slide['id']))
-                    exit(1)
-            assert(all([els[k] for k in els.keys()][0])) # no blanks
-            if 'button' in els:
-                el = els['button'][0]
+        print("Validating slide %s" % slide['id'])
+        for (i,el) in enumerate(slide['content']): # els is dict with one key
+            assert(len(el) == 1)
+            key = [k for k in el.keys()][0]
+            value = el[key]
+            assert(key in ['h1','h2','p','button'])
+            if not value:
+                print("error, empty %s element (#%d) in slide %s" % (k,i,slide['id']))
+                exit(1)
+            if 'button' == key:
+                button = value[0]
                 # pp.pprint(el)
-                if el['destination-type'].lower() == 'absolute':
-                    assert(el['destination'] in allIDs)
+                if button['destination-type'].lower() == 'absolute':
+                    assert(button['destination'] in allIDs)
                 else:
-                    assert(el['destination-type'].lower() == 'relative')
-                    x = int(el['destination'])
+                    assert(button['destination-type'].lower() == 'relative')
+                    x = int(button['destination'])
                     assert(i+x < len(content))
                     absID = content[i+x]['id']
                     print("resolving %s + %d to %s" % (slide['id'],x,absID))
                     el['destination'] = absID
                     el['destination-type'] = 'absolute'
-                assert(el['direction'] in ['left','right','up','down'])
-
+                assert(button['direction'] in ['left','right','up','down'])
+                text = button['text']
+                if (not text) or (text.strip() == ''):
+                    print("Error: no content for button which is element %d of slide %s" % (i,slide['id']))
+                    exit(1)
+                elif not spellcheckElement(text):
+                    print("error, spelling mistake in button element #%d in slide %s" % (i,slide['id']))
+                    exit(1)
+            else:
+                # not button
+                assert(type(value.strip()) == type(''))
+                if not spellcheckElement(value):
+                    print("error, spelling mistake %s  #%d element in slide %s" % (key,i,slide['id']))
+                    exit(1)
 def htmlize(content):
     with open('template.html','r') as f:
         template = Template(f.read())
@@ -72,5 +162,9 @@ def htmlize(content):
 
     return(html)
 
+def unitTests():
+    spellcheckElementTest()
+
 if __name__ == '__main__':
+    unitTests()
     main()
