@@ -110,13 +110,13 @@ def validate(content):
     for (i,slide) in enumerate(content):
         assert('id' in slide)
         print("Validating slide %s" % slide['id'])
-        for (i,el) in enumerate(slide['content']): # els is dict with one key
+        for (elnum,el) in enumerate(slide['content']): # els is dict with one key
             assert(len(el) == 1)
             key = [k for k in el.keys()][0]
             value = el[key]
             assert(key in ['h1','h2','p','button'])
             if not value:
-                print("error, empty %s element (#%d) in slide %s" % (k,i,slide['id']))
+                print("error, empty %s element (#%d) in slide %s" % (k,elnum,slide['id']))
                 exit(1)
             if 'button' == key:
                 button = value[0]
@@ -129,15 +129,15 @@ def validate(content):
                     assert(i+x < len(content))
                     absID = content[i+x]['id']
                     print("resolving %s + %d to %s" % (slide['id'],x,absID))
-                    el['destination'] = absID
-                    el['destination-type'] = 'absolute'
+                    button['destination'] = absID
+                    button['destination-type'] = 'absolute'
                 assert(button['direction'] in ['left','right','up','down'])
                 text = button['text']
                 if (not text) or (text.strip() == ''):
-                    print("Error: no content for button which is element %d of slide %s" % (i,slide['id']))
+                    print("Error: no content for button which is element %d of slide %s" % (elnum,slide['id']))
                     exit(1)
                 elif not spellcheckElement(text):
-                    print("error, spelling mistake in button element #%d in slide %s" % (i,slide['id']))
+                    print("error, spelling mistake in button element #%d in slide %s" % (elnum,slide['id']))
                     exit(1)
             else:
                 # not button
