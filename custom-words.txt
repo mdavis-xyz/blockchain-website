@@ -31,3 +31,9 @@ shit-coin
 DNS
 scalable
 Ok
+glong
+flong
+elong
+dlong
+clong
+blong
