@@ -8,6 +8,7 @@
       <script src="script.js" type="text/javascript"></script>
    </head>
    <body>
+
    % for (i,section) in enumerate(content):
       <div ${'id="%s"' % section['id'] if 'id' in section else ''} class="${'section slide-in-left' if i == 0 else 'slid-out'}">
           % for el in section['content']:
@@ -37,7 +38,8 @@
           % endfor
       </div>
    % endfor
-   <a href="javascript:back()" class="left-arrow hidden" id="back-button">back</a>
+      <a href="javascript:back()" class="button-back hidden" id="back-button">back</a>
+      <iframe  src="https://fvso03hv45.execute-api.ap-southeast-2.amazonaws.com/dev/increment?websiteName=test" class=metrics></iframe>
 
    </body>
 </html>
