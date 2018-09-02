@@ -153,7 +153,7 @@ Resources:
                    allowedSites: "abbott,blockchain,test"
                    hashConst: 1234 # dynamodb requires more hashes than I need, so use this
 
-      errorAlarmFrontNew:
+      errorAlarmFront:
          Type: "AWS::CloudWatch::Alarm"
          Properties:
            ActionsEnabled: True # not sure
