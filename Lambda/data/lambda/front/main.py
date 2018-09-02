@@ -26,6 +26,11 @@ def lambda_handler(event,context):
     if ('unitTest' in event) and event['unitTest']:
         logger.info('Running unit tests')
         unit_tests()
+        if 'queryStringParameters' in event:
+            event['queryStringParameters']['websiteName'] = 'test'
+        else:
+            event['queryStringParameters'] = {'websiteName': 'test'}
+        main(logger,event)
         return()
     else:
         logger.info('Running main (non-test) handler')
@@ -65,7 +70,21 @@ def main(logger,event):
         }
         return(response)
 
-    sendMessage(logger,websiteName)
+    if websiteName.lower() not in os.environ['allowedSites'].split(','):
+        logger.error("Website %s is not in allowed list (%s)" % os.environ['allowedSites'].split(','))
+        response = {
+            'statusCode': 400  ,
+            'headers' : {
+             "Access-Control-Allow-Origin": "*",
+             "Content-Type": "text/html"
+          },
+          'body': "Error, websiteName is not in the approved list"
+        }
+        return(response)
+ 
+
+    #uid = event["requestContext"]["requestId"]
+    updateTables(logger,websiteName,timestamp)
 
     response = {
       'statusCode': 200,
@@ -75,8 +94,66 @@ def main(logger,event):
       },
       'body': html
     }
-
+    logger.info("Returning status 200")
     return(response)
 
-def sendMessage(logger,websiteName):
-    logger.warn("Not actually sending message. TODO")
+def updateTables(logger,websiteName,timestamp):
+    updateUntimed(logger,websiteName)
+    updateTimed(logger,websiteName,timestamp)
+
+def updateUntimed(logger,websiteName):
+    logger.info("Incrementing total count for %s" % websiteName)
+    client = boto3.client('dynamodb')
+    tableName = os.environ['untimedTable'] 
+    hashConst = os.environ['hashConst']
+
+    response = client.update_item(
+        TableName=tableName,
+        Key={
+            'hash': {
+                'N': str(hashConst)
+            },
+            'site': {
+                'S': websiteName
+            }
+        },
+        UpdateExpression='ADD siteViews :q',
+        #ExpressionAttributeNames={
+        #    'N': 'count'
+        #},
+        ExpressionAttributeValues={
+            ':q': {
+                'N': '1'
+            }
+        }
+    )
+    logger.info('untimed database incremented') 
+
+
+def updateTimed(logger,websiteName,timestamp):
+    logger.info("Incrementing total count for %s at %d" % (websiteName,timestamp))
+    client = boto3.client('dynamodb')
+    tableName = os.environ['timedTable'] 
+
+    response = client.update_item(
+        TableName=tableName,
+        Key={
+            'site': {
+                'S': websiteName
+            },
+            'time': {
+                'N': str(int(timestamp)) # boto requires str for ints
+            }
+        },
+        UpdateExpression='ADD siteViews :q',
+        #ExpressionAttributeNames={
+        #    'N': 'count'
+        #},
+        ExpressionAttributeValues={
+            ':q': {
+                'N': '1'
+            }
+        }
+    )
+    logger.info('timed database incremented') 
+        

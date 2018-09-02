@@ -12,9 +12,6 @@ Parameters:
       frontS3Version:
           Type: String
           Description: Version of the zip for front
-      backS3Version:
-          Type: String
-          Description: Version of the zip for back
       errorHandlerS3Version:
           Type: String
           Description: Version of the zip for errorHandler
@@ -94,26 +91,45 @@ Resources:
                          Service: [ "events.amazonaws.com" ]
 
       # this table contains data about each post that was at some point eligible
-      viewHistoryTable:
-                Type: "AWS::DynamoDB::Table"
-                Properties:
-                   AttributeDefinitions:
-                       - AttributeName: "hash"
-                         AttributeType: "N"
-                       - AttributeName: "time"
-                         AttributeType: "N"
-                   KeySchema:
-                       # Apparently you can't have a dynamo table with just a
-                       # sort key. So I'll add a hash key, which will only have
-                       # one value of 0
-                       - AttributeName: "hash"
-                         KeyType:       "HASH"
-                       - AttributeName: "time"
-                         KeyType:       "RANGE"
-                   ProvisionedThroughput:
-                         ReadCapacityUnits: 5
-                         WriteCapacityUnits: 5
+      timedTable:
+          Type: "AWS::DynamoDB::Table"
+          Properties:
+             AttributeDefinitions:
+                 - AttributeName: "site"
+                   AttributeType: "S"
+                 - AttributeName: "time"
+                   AttributeType: "N"
+             KeySchema:
+                 # Apparently you can't have a dynamo table with just a
+                 # sort key. So I'll add a hash key, which will only have
+                 # one value of 0
+                 - AttributeName: "site"
+                   KeyType:       "HASH"
+                 - AttributeName: "time"
+                   KeyType:       "RANGE"
+             ProvisionedThroughput:
+                   ReadCapacityUnits: 5
+                   WriteCapacityUnits: 5
 
+      untimedTable:
+          Type: "AWS::DynamoDB::Table"
+          Properties:
+             AttributeDefinitions:
+                 - AttributeName: "site"
+                   AttributeType: "S"
+                 - AttributeName: "hash"
+                   AttributeType: "N"
+             KeySchema:
+                 # Apparently you can't have a dynamo table with just a
+                 # sort key. So I'll add a hash key, which will only have
+                 # one value of 0
+                 - AttributeName: "site"
+                   KeyType:       "HASH"
+                 - AttributeName: "hash"
+                   KeyType:       "RANGE"
+             ProvisionedThroughput:
+                   ReadCapacityUnits: 5
+                   WriteCapacityUnits: 5
 
       front:
           Type: AWS::Lambda::Function
@@ -125,15 +141,17 @@ Resources:
               S3ObjectVersion: !Ref "frontS3Version"
             Handler: main.lambda_handler
             Runtime: python3.6
-            Timeout: 30
+            Timeout: 10
             Role:
                 "Fn::GetAtt": ["ExecutionRole", "Arn"]
             Environment:
                 Variables:
-                   viewHistoryTable:
-                       Ref: "viewHistoryTable"
-                   errorHandlerArn:
-                       Fn::GetAtt: ["errorHandler", "Arn"]
+                   untimedTable:
+                       Ref: untimedTable
+                   timedTable:
+                       Ref: timedTable
+                   allowedSites: "abbott,blockchain,test"
+                   hashConst: 1234 # dynamodb requires more hashes than I need, so use this
 
       errorAlarmFrontNew:
          Type: "AWS::CloudWatch::Alarm"
@@ -170,22 +188,22 @@ Resources:
          Properties:
              Name: viewcounter
              Description: "For incrementing the count of views to my websites"
-      apistage:
-         DependsOn:
-                  - "ApiGatewayAccount"
-         Type: "AWS::ApiGateway::Stage"
-         Properties:
-               DeploymentId:
-                   Ref: "deploygateway"
-               MethodSettings:
-                   -
-                     DataTraceEnabled: "true"
-                     HttpMethod: "GET"
-                     LoggingLevel: INFO
-                     ResourcePath: "/*"
-               RestApiId:
-                   Ref: "restapi"
-               StageName: !Ref stage
+#      apistage:
+#         DependsOn:
+#                  - "ApiGatewayAccount"
+#         Type: "AWS::ApiGateway::Stage"
+#         Properties:
+#               DeploymentId:
+#                   Ref: "deploygateway"
+#               MethodSettings:
+#                   -
+#                     DataTraceEnabled: "true"
+#                     HttpMethod: "GET"
+#                     LoggingLevel: INFO
+#                     ResourcePath: "/*"
+#               RestApiId:
+#                   Ref: "restapi"
+#               StageName: !Ref stage
       ApiGatewayCloudWatchLogsRole:
        Type: "AWS::IAM::Role"
        Properties:
@@ -220,7 +238,7 @@ Resources:
          DependsOn: "loggerany"
          Type: "AWS::ApiGateway::Deployment"
          Properties:
-             Description: String
+             Description: "front end for view counter"
              RestApiId:
                     Ref: "restapi"
              StageDescription:
@@ -228,7 +246,7 @@ Resources:
                  DataTraceEnabled: true
                  Description: "front end for view counter"
                  LoggingLevel: INFO
-             StageName: !Ref "frontS3Version"
+             StageName: !Ref "stage"
       loggerresource:
          Type: "AWS::ApiGateway::Resource"
          Properties:
@@ -261,57 +279,6 @@ Resources:
                                  ]
                                ]
 
-
-
-
-      back:
-          Type: AWS::Lambda::Function
-          Properties:
-            #FunctionName: !Join [ "-", [ !Ref "botname", "checkForNew"] ]
-            Code:
-              S3Bucket: !Ref "codebucket"
-              S3Key: !Join [ "/", [ !Ref "stage", "back.zip"] ]
-              S3ObjectVersion: !Ref "backS3Version"
-            Handler: main.lambda_handler
-            Runtime: python3.6
-            Timeout: 30
-            Role:
-                "Fn::GetAtt": ["ExecutionRole", "Arn"]
-            Environment:
-                Variables:
-                   viewHistoryTable:
-                       Ref: "viewHistoryTable"
-                   errorHandlerArn:
-                       Fn::GetAtt: ["errorHandler", "Arn"]
-
-      errorAlarmBackNew:
-         Type: "AWS::CloudWatch::Alarm"
-         Properties:
-           ActionsEnabled: True # not sure
-           AlarmDescription:
-               "Function back failed. Unable to read bus and increment db"
-           AlarmActions:
-               - Ref: "unfilteredErrorTopic"
-           ComparisonOperator: "GreaterThanOrEqualToThreshold"
-           EvaluationPeriods: 1
-           MetricName: "Errors"
-           Namespace: "AWS/Lambda"
-           Dimensions:
-               - Name: "FunctionName"
-                 Value:
-                     Ref: "back"
-           Period: 60 # minimum
-           Statistic: Sum
-           Threshold: 1
-           TreatMissingData: "notBreaching"
-
-      permittriggerBack:
-          Type: "AWS::Lambda::Permission"
-          Properties:
-             FunctionName:
-                Ref: "back"
-             Action: "lambda:InvokeFunction"
-             Principal: "sns.amazonaws.com"
 
 
       #######################
