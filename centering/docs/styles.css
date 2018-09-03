@@ -2,6 +2,12 @@
 	http://emergentweb.com/test/valign.css
 */
 
+div.section-0 {
+   height: 40vh;
+   overflow-y: hidden;
+   position: absolute;
+   top: 0;
+}
 
 div.section-A {
 	width: 100%;

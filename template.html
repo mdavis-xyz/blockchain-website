@@ -10,7 +10,8 @@
    <body>
 
    % for (i,section) in enumerate(content):
-      <div ${'id="%s"' % section['id'] if 'id' in section else ''} class="${'section slide-in-left' if i == 0 else 'slid-out'}">
+      <div ${'id="%s"' % section['id'] if 'id' in section else ''} class="section ${'slide-in-left' if i == 0 else 'slid-out'}">
+         <div>
           % for el in section['content']:
               % if 'button' in el:
               <a href="javascript:slide('${section['id']}','${el['button'][0]['destination']}','${el['button'][0]['direction']}')"  class="button">
@@ -36,6 +37,7 @@
                  <% raise NotImplementedError %>
               %endif
           % endfor
+       </div>
       </div>
    % endfor
       <a href="javascript:back()" class="button-back hidden" id="back-button">back</a>
