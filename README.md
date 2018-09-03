@@ -2,7 +2,7 @@
 
 This is for my (not yet published) web page.
 
-I often hear people come across almost any problem and proclaim 'maybe blockchains can help?'
+I often hear people come across almost any problem and proclaim 'maybe blockchains can help?' (e.g. voting, supply chain verification, electricity grid operation)
 
 In almost all cases the answer is no, they can't help.
 It's hard to get people to see this, so I made this site to spell that out to people.
