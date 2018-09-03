@@ -11,3 +11,4 @@ It's hard to get people to see this, so I made this site to spell that out to pe
 
 I initially tried using revealjs for this. However I found that it can't cope with scrolling of long content.
 So I taught myself css and wrote a stripped down version from scratch.
+The hard part is vertically centering short pages, whilst keeping long pages scrollable.
