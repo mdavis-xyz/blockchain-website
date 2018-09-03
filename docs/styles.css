@@ -9,12 +9,14 @@ html,body
   padding: 0;
   margin: 0;
   overflow-y: hidden;
+  overflow-x: hidden;
   text-align: center;
 }
 
 body {
    background: #222;
    font-size: 100%;
+   overflow-x: hidden;
 }
 
 html {
@@ -42,7 +44,7 @@ html {
 
 @media (min-width:60em)  {
    html {
-      font-size: 200%;
+      font-size: 160%;
    }
 }
 
@@ -89,6 +91,7 @@ a {
   padding-top: 0rem;
   /*background: #2a4;*/
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .section > div
@@ -103,6 +106,7 @@ a {
   overflow-x: hidden;
   width: 90%;
 }
+
 
 .slid-out {
    transform: translate(-100%,0);
@@ -120,13 +124,13 @@ a {
 }
 
 @keyframes slide-in-right {
-   0% { transform: translateX(-100vw);}
-   99% { transform: translateX(0%);}
+   0% { transform: translateX(-100vw); overflow-y: hidden;}
+   99% { transform: translateX(0%); overflow-y: hidden;}
    100% { transform: translateX(0%);}
 }
 
 @-webkit-keyframes slide-in-right {
-   0% { -webkit-transform: translateX(-100vw);}
+   0% { -webkit-transform: translateX(-100vw); overflow-y: hidden;}
    100% { -webkit-transform: translateX(0%);}
 }
 
@@ -144,15 +148,15 @@ a {
    -webkit-animation: slide-in-left 0.5s forwards;
 }
 
+
+
 .slide-out-left {
    animation: slide-out-left 0.5s forwards;
    -webkit-animation: slide-out-left 0.5s forwards;
    overflow-y: hidden;
 }
 
-::-webkit-scrollbar {
-   display: none;
-}
+
 
 @keyframes slide-in-left {
    0% { transform: translateX(100vw);}
@@ -335,4 +339,8 @@ a {
    height: 0px;
    width: 0px;
    display: none
+}
+
+::-webkit-scrollbar {
+   display: none;
 }
