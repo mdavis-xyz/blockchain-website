@@ -135,11 +135,13 @@ a {
 }
 
 @keyframes slide-out-right {
-   100% { transform: translateX(100vw); }
+   99% { transform: translateX(100vw); }
+   100% { transform: translateX(100vw); visibility: hidden}
 }
 
 @-webkit-keyframes slide-out-right {
-   100% { -webkit-transform: translateX(100vw); }
+   99% { -webkit-transform: translateX(100vw); }
+   100% { -webkit-transform: translateX(100vw); visibility: hidden}
 }
 
 
@@ -171,11 +173,13 @@ a {
 }
 
 @keyframes slide-out-left {
-   100% { transform: translateX(-100vw); }
+   99% { transform: translateX(-100vw); }
+   100% { transform: translateX(-100vw); visibility: hidden;}
 }
 
 @-webkit-keyframes slide-out-left {
-   100% { -webkit-transform: translateX(-100vw); }
+   99% { -webkit-transform: translateX(-100vw); }
+   100% { -webkit-transform: translateX(-100vw); visibility: hidden;}
 }
 
 
@@ -200,11 +204,13 @@ a {
 }
 
 @keyframes slide-out-up {
-   100% { transform: translateY(-100vh); }
+   99% { transform: translateY(-100vh); }
+   100% { transform: translateY(-100vh); visibility: hidden;}
 }
 
 @-webkit-keyframes slide-out-up {
-   100% { -webkit-transform: translateY(-100vh); }
+   99% { -webkit-transform: translateY(-100vh); }
+   100% { -webkit-transform: translateY(-100vh); visibility: hidden;}
 }
 
 
@@ -229,7 +235,8 @@ a {
 }
 
 @keyframes slide-out-down {
-   100% { transform: translateY(100vh); }
+   99% { transform: translateY(100vh); }
+   100% { transform: translateY(100vh); visibility: hidden;}
 }
 
 @-webkit-keyframes slide-out-down {
