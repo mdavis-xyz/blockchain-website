@@ -150,15 +150,18 @@ def htmlize(content):
         template = Template(f.read())
     html = template.render(content=content)
 
-    document, errors = tidy_document(html,options={'numeric-entities':1})
-    if (errors != None) and (len(errors) > 0):
-        pp.pprint(errors)
-        print("Error: invalid html")
-        # exit(1)
-        print('continuing anyway')
+    try:
+        document, errors = tidy_document(html,options={'numeric-entities':1})
+        if (errors != None) and (len(errors) > 0):
+            pp.pprint(errors)
+            print("Error: invalid html")
+            # exit(1)
+            print('continuing anyway')
 
-    else:
-        print("html valid!")
+        else:
+            print("html valid!")
+    except OSError:
+        print("!!!Warning, skipping html validation")
 
     return(html)
 
