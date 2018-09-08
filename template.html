@@ -10,8 +10,11 @@
    <body>
 
    % for (i,section) in enumerate(content):
-      <div ${'id="%s"' % section['id'] if 'id' in section else ''} class="section ${'slide-in-left' if i == 0 else 'slid-out'}">
-         <div>
+   <div id="${section['id']}-1" class="wrap1 ${'' if i == 0 else 'slid-out'}">
+
+   <div id="${section['id']}-2" class="wrap2">
+      <div id="${section['id']}-3" class="wrap3">
+         <div id="${section['id']}-4" class="wrap4">
           % for el in section['content']:
               % if 'button' in el:
               <a href="javascript:slide('${section['id']}','${el['button'][0]['destination']}','${el['button'][0]['direction']}')"  class="button">
@@ -39,9 +42,9 @@
           % endfor
        </div>
       </div>
+   </div>
+</div>
    % endfor
-      <a href="javascript:back()" class="button-back hidden" id="back-button">back</a>
-      <iframe  src="https://gp0vmedm8i.execute-api.ap-southeast-2.amazonaws.com/prod/increment?websiteName=blockchain" class=metrics></iframe>
-
+   <a href="javascript:back()" class="button-back hidden" id="back-button">back</a>
    </body>
 </html>

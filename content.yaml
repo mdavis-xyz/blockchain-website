@@ -1,3 +1,61 @@
+- id: long
+  content:
+     - h1: Long page
+     - button:
+        - text: to short page
+          destination: short
+          destination-type: absolute
+          direction: up
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
+     - button:
+        - text: to the short page
+          destination: short
+          destination-type: absolute
+          direction: up
+- id: short
+  content:
+     - h1: Short page
+     - button:
+        - text: to long
+          destination: long
+          destination-type: absolute
+          direction: up
+     - p: short page
 - id: start
   content:
      - h1: Do you need a blockchain?

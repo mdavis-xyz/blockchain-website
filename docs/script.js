@@ -14,13 +14,14 @@ function slide(oldElID,newElID,direction){
 }
 
 function slideNoHist(oldElID,newElID,direction){
-   var newEl = document.getElementById(newElID);
-   var oldEl = document.getElementById(oldElID);
+   var newEl = document.getElementById(newElID + '-1');
+   var oldEl = document.getElementById(oldElID + '-1');
    console.log(`sliding ${oldElID} to ${direction} to make room for ${newElID} `);
 //    newEl.scrollTop = 0;
-   newEl.setAttribute('class', 'section slide-in-' + direction);
-   oldEl.setAttribute('class', 'section slide-out-' + direction);
+   newEl.setAttribute('class', 'wrap1 slide-in-' + direction);
+   oldEl.setAttribute('class', 'wrap1 slide-out-' + direction);
    newEl.scrollTop = 0;
+   // document.getElementById(oldElID + '-sec').scrollTop=0;
    currentElID = newElID;
 }
 
