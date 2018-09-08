@@ -262,23 +262,23 @@ a {
 }
 
 @keyframes slide-in-down {
-   0% { bottom: 100%; }
-   100% { top: 0%; }
+   0% { transform: translateX(-100vh);}
+   0% { transform: translateX(0vh);}
 }
 
 @-webkit-keyframes slide-in-down {
-   0% { bottom: 100%; }
-   100% { top: 0%; }
+   0% { transform: translateX(-100vh);}
+   0% { transform: translateX(0vh);}
 }
 
 @keyframes slide-out-down {
-   /*0% { top: 100%; }*/
-   100% { top: 100%; }
+   0% { transform: translateX(0vh);}
+   0% { transform: translateX(100vh);}
 }
 
 @-webkit-keyframes slide-out-down {
-   /*0% { top: 100%; }*/
-   100% { top: 100%; }
+   0% { transform: translateX(0vh);}
+   0% { transform: translateX(100vh);}
 }
 
 .button {

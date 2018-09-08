@@ -5,7 +5,7 @@
         - text: to short page
           destination: short
           destination-type: absolute
-          direction: up
+          direction: down
      - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
      - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
      - p: long long long long long long long long long long long long long long long long long long long long long long long long long long long long
@@ -46,7 +46,7 @@
         - text: to the short page
           destination: short
           destination-type: absolute
-          direction: up
+          direction: down
 - id: short
   content:
      - h1: Short page
@@ -54,7 +54,7 @@
         - text: to long
           destination: long
           destination-type: absolute
-          direction: up
+          direction: down
      - p: short page
 - id: start
   content:
