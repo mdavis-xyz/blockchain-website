@@ -286,7 +286,7 @@
         - text: I'm willing to pay more
           destination: 1
           destination-type: relative
-          direction: left # double check all directions
+          direction: left
 - id: write-speed
   content:
      - h2: How many writes do you need to deal with?
@@ -294,7 +294,7 @@
         - text: More than 3 per second
           destination: too-slow
           destination-type: absolute
-          direction: down # double check all directions
+          direction: down
      - button:
         - text: Less than 3 per second
           destination: 2
@@ -314,7 +314,7 @@
         - text: Yes
           destination: emissions-a
           destination-type: absolute
-          direction: down # double check all directions
+          direction: down
      - button:
         - text: No
           destination: 2
@@ -405,7 +405,7 @@
   content:
      - h1: Yes, you do need a blockchain
      - p: Cryptocurrencies are one of the few use cases where blockchains are the best available choice. However, does the world really need another cryptocurrency?
-     - p: Make sure your coin is uniquely useful. Also, be careful. The world of cryptocurrencies is not very kind to those who write <a target="_blank" href="https://davidgerard.co.uk/blockchain/ethereum-smart-contracts-in-practice/">buggy code</a> or have consumer grade security <sup><a target="_blank" href="https://twitter.com/lopp/status/1015586077850177536?s=21">[1]</a><a target="_blank" href="https://www.reddit.com/r/btc/comments/7ofrqf/warning_brutal_scam_guy_buys_a_ledger_nano_wallet/">[2]</a><a target="_blank" href="https://www.reddit.com/r/legaladvice/comments/8dxyb8/i_bought_112_bitcoin_in_2013_friend_that_sold/">[3]</a><a target="_blank" href="https://www.reddit.com/r/CryptoCurrency/comments/8pcxi3/neon_wallet_hacked_150200k_anything_i_can_do/">[4]</a><a target="_blank" href="https://www.reddit.com/r/Bitcoin/comments/81yyxh/lost_bitcoin_lost_my_diary_that_stored_my_back_up/">[5]</a><a target="_blank" href="https://www.reddit.com/r/CryptoCurrency/comments/8dnbeh/coins_gone_hope_you_learn_from_my_mistake/">[6]</a><a target="_blank" href="https://www.reddit.com/r/Monero/comments/7lb7rm/be_your_own_bank_a_cautionary_tale/">[7]</a></sup>. # TODO: references?
+     - p: Make sure your coin is uniquely useful. Also, be careful. The world of cryptocurrencies is not very kind to those who write <a target="_blank" href="https://davidgerard.co.uk/blockchain/ethereum-smart-contracts-in-practice/">buggy code</a> or have consumer grade security <sup><a target="_blank" href="https://twitter.com/lopp/status/1015586077850177536?s=21">[1]</a><a target="_blank" href="https://www.reddit.com/r/btc/comments/7ofrqf/warning_brutal_scam_guy_buys_a_ledger_nano_wallet/">[2]</a><a target="_blank" href="https://www.reddit.com/r/legaladvice/comments/8dxyb8/i_bought_112_bitcoin_in_2013_friend_that_sold/">[3]</a><a target="_blank" href="https://www.reddit.com/r/CryptoCurrency/comments/8pcxi3/neon_wallet_hacked_150200k_anything_i_can_do/">[4]</a><a target="_blank" href="https://www.reddit.com/r/Bitcoin/comments/81yyxh/lost_bitcoin_lost_my_diary_that_stored_my_back_up/">[5]</a><a target="_blank" href="https://www.reddit.com/r/CryptoCurrency/comments/8dnbeh/coins_gone_hope_you_learn_from_my_mistake/">[6]</a><a target="_blank" href="https://www.reddit.com/r/Monero/comments/7lb7rm/be_your_own_bank_a_cautionary_tale/">[7]</a></sup>.
      - p: I hope the <a target="_blank" href="https://www.cell.com/joule/fulltext/S2542-4351(18)30177-6">emissions</a>, <a target="_blank" href="https://www.blockchain.com/charts/cost-per-transaction?popcorn=extrabuttery">cost</a>, <a target="_blank" href="https://www.blockchain.com/charts/transactions-per-second?timespan=30days">low performance</a>, <a target="_blank" href="https://fc18.ifca.ai/preproceedings/6.pdf">legal risk</a> and <a target="_blank" href="https://www.coindesk.com/the-first-augur-assassination-markets-have-arrived/">ethical costs</a> are worth it.
 
 - id: maybe-blockchain
