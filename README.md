@@ -12,3 +12,7 @@ It's hard to get people to see this, so I made this site to spell that out to pe
 I initially tried using revealjs for this. However I found that it can't cope with scrolling of long content.
 So I taught myself css and wrote a stripped down version from scratch.
 The hard part is vertically centering short pages, whilst keeping long pages scrollable.
+
+## Image Credits
+
+The website itself doesn't contain images. However I added one in the metadata for facebook share previews. That's from [here](https://unsplash.com/photos/1GepXKtYUK8).
