@@ -93,9 +93,13 @@ def main():
     with open(inputFname,'r') as f:
         content = yaml.load(f)
 
+    jsFname = 'docs/script.js'
+    with open(jsFname,'r') as f:
+        js = f.read()
+
     # pp.pprint(content)
     validate(content)
-    html = htmlize(content)
+    html = htmlize(content,js)
     # print(html)
 
     with open('docs/index.html','w') as f:
@@ -145,10 +149,10 @@ def validate(content):
                 if not spellcheckElement(value):
                     print("error, spelling mistake %s  #%d element in slide %s" % (key,i,slide['id']))
                     exit(1)
-def htmlize(content):
+def htmlize(content,javascript):
     with open('template.html','r') as f:
         template = Template(f.read())
-    html = template.render(content=content)
+    html = template.render(content=content,javascript=javascript)
 
     try:
         document, errAndWarn = tidy_document(html,options={'numeric-entities':1})
