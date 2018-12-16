@@ -76,6 +76,9 @@ def main(logger,event):
             'statusCode': 400  ,
             'headers' : {
              "Access-Control-Allow-Origin": "*",
+             "Access-Control-Allow-Methods": "POST, GET",
+             "Access-Control-Allow-Headers": "X-PINGOTHER, Content-Type",
+             "Access-Control-Max-Age": 86400,
              "Content-Type": "text/html"
           },
           'body': "Error, websiteName is not in the approved list"
@@ -89,8 +92,11 @@ def main(logger,event):
     response = {
       'statusCode': 200,
       'headers' : {
+         "Content-Type": "text/html",
          "Access-Control-Allow-Origin": "*",
-         "Content-Type": "text/html"
+         "Access-Control-Allow-Methods": "POST, GET",
+         "Access-Control-Allow-Headers": "X-PINGOTHER, Content-Type",
+         "Access-Control-Max-Age": 86400
       },
       'body': html
     }
