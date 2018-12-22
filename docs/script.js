@@ -14,12 +14,11 @@ function slide(oldElID,newElID,direction){
 }
 
 function slideNoHist(oldElID,newElID,direction){
-   var newEl = document.getElementById(newElID);
-   var oldEl = document.getElementById(oldElID);
-   console.log(`sliding ${oldElID} to ${direction} to make room for ${newElID} `);
-//    newEl.scrollTop = 0;
-   newEl.setAttribute('class', 'section slide-in-' + direction);
-   oldEl.setAttribute('class', 'section slide-out-' + direction);
+   var newEl = document.getElementById(newElID + '-1');
+   var oldEl = document.getElementById(oldElID + '-1');
+   console.log('sliding ' + oldElID + ' to ' + direction + ' to make room for ' + newElID);
+   newEl.setAttribute('class', 'wrap1 slide-in-' + direction);
+   oldEl.setAttribute('class', 'wrap1 slide-out-' + direction);
    newEl.scrollTop = 0;
    currentElID = newElID;
 }
@@ -40,7 +39,7 @@ function reverseDirection(prevDir){
            newDir = 'left';
            break;
    }
-   console.log(`reverse of ${prevDir} is ${newDir}`);
+   console.log('reverse of ' + prevDir + ' is ' + newDir);
    return(newDir);
 }
 
@@ -48,7 +47,7 @@ function back(){
    console.log("Back button pressed");
    var newElID = navHistory.pop();
    var direction = reverseDirection(navDirections.pop());
-   console.log(`Sliding back from ${currentElID} to ${newElID}`);
+   console.log('Sliding back from ' + currentElID + ' to ' + newElID);
    slideNoHist(currentElID,newElID,direction);
    if(navHistory.length == 0) {
       if (backButton == null){

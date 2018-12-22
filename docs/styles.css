@@ -2,42 +2,45 @@
    font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
-html {
-   font-size: 50%;
+
+body {
+   background: #222;
+   font-size: 100%;
+   overflow-y: hidden;
+   overflow-x: hidden;
+   text-align: center;
    color: #fff;
+   /*width: 100%;*/
 }
 
-@media (min-width:20em)  {
+html {
+   font-size: 50%;
+}
+
+@media (min-width:20rem)  {
    html {
       font-size: 66%;
    }
 }
 
-@media (min-width:30em)  {
+@media (min-width:30rem)  {
    html {
       font-size: 100%;
    }
 }
 
-@media (min-width:45em)  {
+@media (min-width:45rem)  {
    html {
       font-size: 150%;
    }
 }
 
-@media (min-width:60em)  {
+@media (min-width:60rem)  {
    html {
-      font-size: 200%;
+      font-size: 160%;
    }
 }
 
-body {
-   background: #222;
-   overflow: hidden;
-   height: 100vh;
-   width: 100vw;
-   font-size: 100%;
-}
 
 
 h1 {
@@ -68,147 +71,181 @@ a {
    color: #007fff;
 }
 
-.section {
-   overflow-y: visible;
-   overflow-x: hidden;
-   width: 90%;
-   height: 100%;
-   padding-left: 5%;
-   padding-right: 5%;
-   position: absolute;
-   top: 0;
-   left: 0;
-   text-align: center;
-   margin-bottom: 0%;
+.wrap1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0);
+  overflow-y: auto;
+  width:100%;
+}
+.wrap2 {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.wrap3 {
+  vertical-align: middle;
+  display: table-cell;
+}
+.wrap4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .slid-out {
-   transform: translate(-100%,0);
+   /*transform: translateX(100%);*/
+   visibility: hidden;
+   /*display: none;*/
 }
 
 .slide-in-right {
-   /*left: 50%;*/
-   animation: slide-in-right 0.5s forwards;
    -webkit-animation: slide-in-right 0.5s forwards;
+   animation: slide-in-right 0.5s forwards;
 }
 
-.slide-out-right {
-   animation: slide-out-right 0.5s forwards;
-   -webkit-animation: slide-out-right 0.5s forwards;
-}
 
 @keyframes slide-in-right {
-   0% { transform: translateX(-100vw); overflow-y: hidden;}
-   99% { transform: translateX(0%); overflow-y: hidden;}
-   100% { transform: translateX(0%); overflow-y: scroll;;}
+   0% { transform: translateX(-100vw);overflow-y: hidden;}
+   99% { transform: translateX(0vw); overflow-y: hidden;}
+   100% { transform: translateX(0vw);}
 }
 
 @-webkit-keyframes slide-in-right {
-   0% { -webkit-transform: translateX(-100vw); overflow-y: hidden;}
-   100% { -webkit-transform: translateX(0%); overflow-y: scroll;}
+   0% { transform: translateX(-100vw);overflow-y: hidden;}
+   99% { transform: translateX(0vw); overflow-y: hidden;}
+   100% { transform: translateX(0vw);}
+}
+
+
+.slide-out-right {
+   /*visibility: hidden;*/
+   -webkit-animation: slide-out-right 0.5s forwards;
+   animation: slide-out-right 0.5s forwards;
+   overflow-y: hidden;
 }
 
 @keyframes slide-out-right {
-   100% { transform: translateX(100vw); }
+   0% { transform: translateX(0vw);}
+   100% { transform: translateX(100vw);}
 }
 
 @-webkit-keyframes slide-out-right {
-   100% { -webkit-transform: translateX(100vw); }
+   0% { transform: translateX(0vw);}
+   100% { transform: translateX(100vw);}
 }
 
 
 .slide-in-left {
-   animation: slide-in-left 0.5s forwards;
    -webkit-animation: slide-in-left 0.5s forwards;
-}
-
-.slide-out-left {
-   animation: slide-out-left 0.5s forwards;
-   -webkit-animation: slide-out-left 0.5s forwards;
-   overflow-y: hidden;
-}
-
-::-webkit-scrollbar {
-   display: none;
-}
-
-@keyframes slide-in-left {
-   0% { transform: translateX(100vw);  overflow-y: hidden;}
-   99% { transform: translateX(0%);  overflow-y: hidden;}
-   100% { transform: translateX(0%); overflow-y: scroll;}
+   animation: slide-in-left 0.5s forwards;
 }
 
 @-webkit-keyframes slide-in-left {
-   0% { -webkit-transform: translateX(100vw); overflow-y: hidden;}
-   99% { -webkit-transform: translateX(0%); overflow-y: hidden;}
-   100% { -webkit-transform: translateX(0%); overflow-y: scroll;}
+   0% { transform: translateX(100vw);}
+   100% { transform: translateX(0vw);}
 }
 
+
+@keyframes slide-in-left {
+   0% { transform: translateX(100vw);}
+   100% { transform: translateX(0vw);}
+}
+
+
+.slide-out-left {
+   /*visibility: hidden;*/
+   -webkit-animation: slide-out-left 0.5s forwards;
+   animation: slide-out-left 0.5s forwards;
+   overflow-y: hidden;
+}
+
+
+
 @keyframes slide-out-left {
-   100% { transform: translateX(-100vw); }
+   0% { transform: translateX(0vw);}
+   100% { transform: translateX(-100vw);}
 }
 
 @-webkit-keyframes slide-out-left {
-   100% { -webkit-transform: translateX(-100vw); }
+   0% { transform: translateX(0vw);}
+   100% { transform: translateX(-100vw);}
 }
 
 
 .slide-in-up {
-   animation: slide-in-up 0.5s forwards;
    -webkit-animation: slide-in-up 0.5s forwards;
+   animation: slide-in-up 0.5s forwards;
 }
 
-.slide-out-up {
-   animation: slide-out-up 0.5s forwards;
-   -webkit-animation: slide-out-up 0.5s forwards;
-}
+
 
 @keyframes slide-in-up {
-   0% { transform: translateY(100vh); }
-   100% { transform: translateY(0%); }
+   0% { transform: translateY(-100vh);}
+   100% { transform: translateY(0vh);}
 }
 
 @-webkit-keyframes slide-in-up {
-   0% { -webkit-transform: translateY(100vh);}
-   100% { -webkit-transform: translateY(0%);}
+   0% { transform: translateY(-100vh);}
+   100% { transform: translateY(0vh);}
+}
+
+.slide-out-up {
+   -webkit-animation: slide-out-up 0.5s forwards;
+   animation: slide-out-up 0.5s forwards;
+   overflow-y: hidden;
 }
 
 @keyframes slide-out-up {
-   100% { transform: translateY(-100vh); }
+   0% { transform: translateY(0vh);}
+   100% { transform: translateY(100vh);}
 }
 
 @-webkit-keyframes slide-out-up {
-   100% { -webkit-transform: translateY(-100vh); }
+   0% { transform: translateY(0vh);}
+   100% { transform: translateY(100vh);}
 }
 
 
 .slide-in-down {
-   animation: slide-in-down 0.5s forwards;
    -webkit-animation: slide-in-down 0.5s forwards;
+   animation: slide-in-down 0.5s forwards;
 }
 
-.slide-out-down {
-   animation: slide-out-down 0.5s forwards;
-   -webkit-animation: slide-out-down 0.5s forwards;
-}
+
 
 @keyframes slide-in-down {
-   0% { transform: translateY(-100vh); }
-   100% { transform: translateY(0%); }
+   0% { transform: translateY(100vh);}
+   99% { transform: translateY(0vh);}
+   100% { transform: translateY(0vh);}
 }
 
 @-webkit-keyframes slide-in-down {
-   0% { -webkit-transform: translateY(-100vh);}
-   100% { -webkit-transform: translateY(0%);}
+   0% { transform: translateY(100vh);}
+   99% { transform: translateY(0vh);}
+   100% { transform: translateY(0vh);}
+}
+
+.slide-out-down {
+   /*visibility: hidden;*/
+   -webkit-animation: slide-out-down 0.5s forwards;
+   animation: slide-out-down 0.5s forwards;
+   overflow-y: hidden;
 }
 
 @keyframes slide-out-down {
-   100% { transform: translateY(100vh); }
+   0% { transform: translateY(0vh);}
+   100% { transform: translateY(-100vh);}
 }
 
 @-webkit-keyframes slide-out-down {
-   99% { -webkit-transform: translateY(100vh); }
-   100% { -webkit-transform: translateY(100vh); visibility: hidden;}
+   0% { transform: translateY(0vh);}
+   100% { transform: translateY(-100vh);}
 }
 
 .button {
@@ -289,8 +326,8 @@ a {
 
 
 .slide-in-button {
-   animation: slide-in-button 0.5s forwards;
    -webkit-animation: slide-in-button 0.5s forwards;
+   animation: slide-in-button 0.5s forwards;
 }
 
 @keyframes slide-in-button {
@@ -300,8 +337,8 @@ a {
 
 
 .slide-out-button {
-   animation: slide-out-button 0.5s forwards;
    -webkit-animation: slide-out-button 0.5s forwards;
+   animation: slide-out-button 0.5s forwards;
 }
 
 @keyframes slide-out-button {
@@ -313,4 +350,8 @@ a {
    height: 0px;
    width: 0px;
    display: none
+}
+
+::-webkit-scrollbar {
+   display: none;
 }
